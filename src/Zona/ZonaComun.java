@@ -1,8 +1,7 @@
-package zona;
+package Zona;
 
 public class ZonaComun extends Zona{
-
-    ZonaComun(String[] codigo, String[] descripcion) {
+    public ZonaComun(String codigo, String descripcion) {
         super(codigo, descripcion);
     }
 }

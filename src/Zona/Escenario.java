@@ -1,12 +1,12 @@
-package zona;
+package Zona;
 import java.util.*;
 import java.lang.String;
 
 public class Escenario extends Zona{
-    private int CapMax;
+    private int capMax;
     private List<Evento> eventos;
-    Escenario(String[] codigo,String[] descripcion,int CapMax){
+    public Escenario(String codigo, String descripcion, int capMax){
         super(codigo, descripcion);
-        this.CapMax = CapMax;
+        this.capMax = capMax;
     }
 }
