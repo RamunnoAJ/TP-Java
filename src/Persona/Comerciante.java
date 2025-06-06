@@ -1,12 +1,15 @@
 package Persona;
 
+import java.util.List;
 import Acceso.Acceso;
+import Zona.Stand;
+import Zona.Zona;
 
 public class Comerciante extends PersonaConAccesoRestringido{
     private Stand stand;
 
-    public Comerciante(int id, String nombre, Acceso acceso, Zona zona, Stand stand) {
-        super(id, nombre, acceso, zona);
+    public Comerciante(int id, String nombre, List<Acceso> accesos, Zona zona, Stand stand) {
+        super(id, nombre, accesos, zona);
         this.stand = stand;
     }
 

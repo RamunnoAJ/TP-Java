@@ -1,7 +1,9 @@
 package Acceso;
 
+import Zona.Zona;
+
 public class Acceso {
-     private Zona zona;
+    private Zona zona;
     private String fecha;
     private String hora;
     private int cantMinutos;
