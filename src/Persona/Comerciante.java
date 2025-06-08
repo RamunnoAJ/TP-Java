@@ -20,4 +20,9 @@ public class Comerciante extends PersonaConAccesoRestringido{
     public void setStand(Stand stand) {
         this.stand = stand;
     }
+
+    @Override
+    public String toString() {
+        return "Comerciante. "+super.toString();
+    }
 }

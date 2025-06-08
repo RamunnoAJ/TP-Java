@@ -9,4 +9,16 @@ public class Escenario extends Zona{
         super(codigo, descripcion);
         this.capMax = capMax;
     }
+
+    public int getCapMax(){
+        return capMax;
+    }
+    public void setCapMax(int capMax){
+        this.capMax = capMax;
+    }
+
+    @Override
+    public String toString() {
+        return "Escenario. Capacidad Maxima: "+ capMax + super.toString();
+    }
 }

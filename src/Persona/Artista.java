@@ -8,4 +8,10 @@ public class Artista extends PersonaConAccesoRestringido{
     public Artista(int id, String nombre, List<Acceso> accesos, Zona zona) {
         super(id, nombre, accesos, zona);
     }
+
+    @Override
+    public String toString() {
+        return "Artista. "+super.toString();
+    }
 }
+

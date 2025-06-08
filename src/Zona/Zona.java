@@ -37,4 +37,9 @@ public class Zona {
     public void setPersonas(LinkedList<Persona> personas) {
         this.personas = personas;
     }
+
+    @Override
+    public String toString() {
+        return "Zona{" + "codigo=" + codigo + ", descripcion=" + descripcion + '}';
+    }
 }

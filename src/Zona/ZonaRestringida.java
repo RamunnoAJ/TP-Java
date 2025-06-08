@@ -15,4 +15,9 @@ public class ZonaRestringida extends Zona{
     public void setCapMax(int capMax) {
         this.capMax = capMax;
     }
+
+    @Override
+    public String toString() {
+        return "ZonaRestringida. " + "Capacidad maxima: " + capMax + super.toString();
+    }
 }
