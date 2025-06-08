@@ -1,5 +1,11 @@
 package Acceso;
 
 public enum Estado {
-    AUTORIZADO, DENEGADO
+    AUTORIZADO, DENEGADO;
+
+    public String toString(){
+        return (valueOf(AUTORIZADO))?"Autorizado":"Denegado";
+    }
 }
+
+

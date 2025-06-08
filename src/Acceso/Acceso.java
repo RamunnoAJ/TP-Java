@@ -55,4 +55,8 @@ public class Acceso {
     public void setCantMinutos(int cantMinutos) {
         this.cantMinutos = cantMinutos;
     }
+
+    public String toString() {
+        return zona.toString() + " " + fecha + " " + hora + " " + "Cantidad de minutos en la zona" + cantMinutos + "Acceso" + estado.toString();
+    }
 }

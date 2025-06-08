@@ -53,4 +53,11 @@ public class ControlAccesos {
         Acceso a = new Acceso(z, fecha, hora, 0, estado);
         p.getAccesos().add(a);
     }
+
+    public void mostrarDatos(Persona p) {
+        System.out.println("Datos de la persona");
+        System.out.println(p.toString());
+        System.out.println("Historial de accesos de la persona");
+        p.mostrarAccesos();
+    }
 }

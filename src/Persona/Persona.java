@@ -46,5 +46,15 @@ abstract public class Persona {
     public boolean tieneAcceso(Zona z){
 
     }
+
+    public boolean equals(Persona p){
+        return id==p.getId();
+    }
+
+    public void mostrarAccesos(){
+        for(Acceso a : accesos){
+            System.out.println(a.toString());
+        }
+    }
 }
 

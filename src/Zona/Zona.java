@@ -47,7 +47,6 @@ public abstract class Zona {
         return 0;
     }
 
-    @Override
     public boolean equals(Zona o) {
         return codigo.equals(o.getCodigo())&&descripcion.equals(o.getDescripcion());
     }
