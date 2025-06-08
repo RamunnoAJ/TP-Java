@@ -4,7 +4,7 @@ import Persona.Persona;
 
 import java.util.LinkedList;
 
-public class Zona {
+public abstract class Zona {
     private String codigo;
     private String descripcion;
     private LinkedList<Persona> personas;
