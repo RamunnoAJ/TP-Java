@@ -42,4 +42,13 @@ public abstract class Zona {
     public String toString() {
         return "Zona{" + "codigo=" + codigo + ", descripcion=" + descripcion + '}';
     }
+
+    public int getCapMax(){
+        return 0;
+    }
+
+    @Override
+    public boolean equals(Zona o) {
+        return codigo.equals(o.getCodigo())&&descripcion.equals(o.getDescripcion());
+    }
 }

@@ -41,5 +41,10 @@ abstract public class Persona {
     public String toString() {
         return "Nombre: " + nombre + ", Id: " + id + "}";
     }
+
+    //hay que desarrollar una funcion de este estilo
+    public boolean tieneAcceso(Zona z){
+
+    }
 }
 

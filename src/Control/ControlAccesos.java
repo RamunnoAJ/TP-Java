@@ -17,40 +17,36 @@ public class ControlAccesos {
     private DateTimeFormatter fmtFecha = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     private DateTimeFormatter fmtHora  = DateTimeFormatter.ofPattern("HH:mm:ss");
 
-    /*
-     Devuelve la lista completa de accesos (autorizados y denegados)
-     de la persona p. No tiene uso aun, para mas adelante para hacer los reportes
-     */
+    //para usar mas tarde
     public List<Acceso> consultarDatos(Persona p) {
         return p.getAccesos();
     }
-    
-    public void moverPersona(Persona p, Zona origen, Zona destino) throws AccesoNoAutorizadoException, CapacidadAlcanzadaException, ZonaInvalidaException {
+
+    public void moverPersona(Persona p, Zona origen, Zona destino)
+            throws AccesoNoAutorizadoException, CapacidadAlcanzadaException, ZonaInvalidaException {
         if (destino == null || origen == null) {
-            // Zona destino inválida
             registrarAcceso(p, destino, Estado.DENEGADO);
-            throw new ZonaInvalidaException("Zona destino u origen nula");
-        } else if (!p.tieneAcceso(destino)) {// Chequeo permiso
+            throw new ZonaInvalidaException("Alguna zona es nula");
+        } else if (origen.equals(destino)) {
+            registrarAcceso(p, destino, Estado.DENEGADO);
+            throw new ZonaInvalidaException("Ya se encuentra en la zona");
+        } else if (!p.tieneAcceso(destino)) {
             registrarAcceso(p, destino, Estado.DENEGADO);
             throw new AccesoNoAutorizadoException(
                     "Persona " + p.getNombre() + " no autorizada para zona " + destino.getCodigo());
-        } else if (destino.getPersonas().size() >= destino.getCapacidadMaxima()) {// Chequeo capacidad
+        } else if (destino.getCapMax() > 0
+                && destino.getPersonas().size() >= destino.getCapMax()) {
             registrarAcceso(p, destino, Estado.DENEGADO);
             throw new CapacidadAlcanzadaException(
-                    "Zona " + destino.getCodigo() + " al máximo de su capacidad");
-
-        }else{
-            // Si llegamos acá es porque se puede mover a la persona
-            // 1. Remuevo a la persona de la zona origen
+                    "Zona " + destino.getCodigo() + " al máximo de su capacidad ("
+                            + destino.getCapMax() + ")");
+        } else {
             origen.getPersonas().remove(p);
-            // 2. Agregar a la persona a la zona destino
             destino.getPersonas().add(p);
-            // 3. Registrar acceso autorizado
             registrarAcceso(p, destino, Estado.AUTORIZADO);
         }
     }
 
-    //La hice privada asi solo se puede acceder desde un metodo de esta clase y no de afuera, ya que solo se invoca si se pudo mover
     private void registrarAcceso(Persona p, Zona z, Estado estado) {
         String fecha = LocalDate.now().format(fmtFecha);
         String hora  = LocalTime.now().format(fmtHora);
