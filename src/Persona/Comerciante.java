@@ -25,4 +25,5 @@ public class Comerciante extends PersonaConAccesoRestringido{
     public String toString() {
         return "Comerciante. "+super.toString();
     }
+    //falta implementar tiene acceso
 }

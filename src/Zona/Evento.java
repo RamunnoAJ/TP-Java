@@ -34,4 +34,8 @@ public class Evento {
     public void setArtista(String artista) {
         this.artista = artista;
     }
+
+    public String toString(){
+        return "Fecha: " + fecha + "\nHora: " + hora + "\nArtista: " + artista;
+    }
 }

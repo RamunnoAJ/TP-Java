@@ -2,6 +2,7 @@ package Persona;
 
 import java.util.List;
 import Acceso.Acceso;
+import Zona.Zona;
 
 public class StaffOrganizador extends Persona{
     public StaffOrganizador(int id, String nombre, List<Acceso> accesos) {
@@ -11,5 +12,11 @@ public class StaffOrganizador extends Persona{
     @Override
     public String toString() {
         return "Staff Organizador" + super.toString();
+    }
+
+    @Override
+    //Devuelve siempre true porque el staff organizador puede acceder a cualquier parte del evento
+    public boolean tieneAcceso(Zona z) {
+        return true;
     }
 }

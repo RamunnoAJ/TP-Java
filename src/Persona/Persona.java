@@ -2,6 +2,7 @@ package Persona;
 
 import java.util.List;
 import Acceso.Acceso;
+import Zona.Zona;
 
 abstract public class Persona {
     private int id;
@@ -42,10 +43,8 @@ abstract public class Persona {
         return "Nombre: " + nombre + ", Id: " + id + "}";
     }
 
-    //hay que desarrollar una funcion de este estilo
-    public boolean tieneAcceso(Zona z){
-
-    }
+    //reescribir para todas las funciones sino se hacen abstractas
+    public abstract boolean tieneAcceso(Zona z);
 
     public boolean equals(Persona p){
         return id==p.getId();

@@ -13,5 +13,10 @@ public class Artista extends PersonaConAccesoRestringido{
     public String toString() {
         return "Artista. "+super.toString();
     }
+
+    @Override
+    public boolean tieneAcceso(Zona z) {
+        //hay que desarrollarlo
+    }
 }
 

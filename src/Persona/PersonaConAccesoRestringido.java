@@ -20,4 +20,6 @@ public class PersonaConAccesoRestringido extends Persona {
     public void setZona(Zona zona) {
         this.zona = zona;
     }
+
+    //falta implementar tiene acceso
 }
