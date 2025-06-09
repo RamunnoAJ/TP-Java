@@ -27,11 +27,7 @@ public class Empleado extends PersonaConAccesoRestringido {
 
     @Override
     public boolean tieneAcceso(Zona z) {
-        if (z instanceof ZonaComun ||(z instanceof Stand && stand.equals(z))||estaPermitida(z)){
-            return true;
-        }else{
-            return false;
-        }
+        return (z instanceof ZonaComun ||(z instanceof Stand && stand.equals(z))||estaPermitida(z));
     }
 }
 //falta implementar tiene accceso

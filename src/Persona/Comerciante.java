@@ -28,10 +28,7 @@ public class Comerciante extends PersonaConAccesoRestringido{
     }
 
     public boolean tieneAcceso(Zona z) {
-        if (z instanceof ZonaComun ||(z instanceof Stand && stand.equals(z))||estaPermitida(z)){
-            return true;
-        }else{
-            return false;
-        }
+        return (z instanceof ZonaComun ||(z instanceof Stand && stand.equals(z))||estaPermitida(z));
+
     }
 }

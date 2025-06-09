@@ -20,11 +20,8 @@ public class Asistente extends Persona{
     @Override
 
     public boolean tieneAcceso(Zona z) {
-        if(z instanceof ZonaComun ||z instanceof Escenario){
-            return true;
-        }else{
-            return false;
-        }
+        return (z instanceof ZonaComun ||z instanceof Escenario);
+
     }
 }
 
