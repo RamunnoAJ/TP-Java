@@ -2,25 +2,18 @@ package Zona;
 import java.util.*;
 import java.lang.String;
 
-public class Escenario extends Zona{
-    private int capMax;
+public class Escenario extends ZonaRestringida{
     private List<Evento> eventos;
     public Escenario(String codigo, String descripcion, int capMax){
-        super(codigo, descripcion);
-        this.capMax = capMax;
-    }
-
-    public int getCapMax(){
-        return capMax;
-    }
-    public void setCapMax(int capMax){
-        this.capMax = capMax;
+        super(codigo, descripcion,capMax);
     }
 
     @Override
     public String toString() {
-        return "Escenario. Capacidad Maxima: "+ capMax + super.toString();
+        return "Escenario. Capacidad Maxima: "+ getCapMax() + super.toString();
     }
+
+    //Faltarian funciones para agregar eventos musicales
 
     public void mostrarEventos(){
         System.out.println("Eventos musicales: ");

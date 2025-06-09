@@ -5,13 +5,13 @@ import Persona.Comerciante;
 public class Stand extends ZonaRestringida {
     private String ubicacion;
     private ZonaComun zonacomun;
-    private Comerciante comerciante;
+    private Comerciante responsable;
 
     public Stand(String codigo, String descripcion, int CapMax, String ubicacion, ZonaComun zonacomun, Comerciante comerciante) {
         super(codigo, descripcion, CapMax);
         this.ubicacion = ubicacion;
         this.zonacomun = zonacomun;
-        this.comerciante = comerciante;
+        this.responsable = comerciante;
     }
 
     public String getUbicacion() {
@@ -30,11 +30,11 @@ public class Stand extends ZonaRestringida {
         this.zonacomun = zonacomun;
     }
 
-    public Comerciante getComerciante() {
-        return comerciante;
+    public Comerciante getResponsable() {
+        return responsable;
     }
 
-    public void setComerciante(Comerciante comerciante) {
-        this.comerciante = comerciante;
+    public void setResponsable(Comerciante comerciante) {
+        this.responsable = comerciante;
     }
 }

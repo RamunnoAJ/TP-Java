@@ -5,6 +5,7 @@ public class ZonaComun extends Zona{
         super(codigo, descripcion);
     }
 
+    //estaria bueno hacer mas zonas comunes, y zona comun y zona restringida hacerlas abstractas
     @Override
     public String toString() {
         return "Zona comun. "+ super.toString();
