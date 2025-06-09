@@ -13,9 +13,9 @@ public class Escenario extends ZonaRestringida{
         return "Escenario. Capacidad Maxima: "+ getCapMax() + super.toString();
     }
 
-    //Faltarian funciones para agregar eventos musicales
+    //Faltarian funciones para agregar eventos musicales, y no se si eliminar tambien
 
-    public void mostrarEventos(){
+    public void muestraEventosMusicales(){
         System.out.println("Eventos musicales: ");
         for(Evento evento : eventos){
             System.out.println(evento.toString());

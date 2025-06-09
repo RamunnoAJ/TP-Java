@@ -6,11 +6,11 @@ import Zona.Stand;
 import Zona.Zona;
 import Zona.ZonaComun;
 
-public class Empleado extends Persona {
+public class Empleado extends PersonaConAccesoRestringido {
     private Stand stand;
 
-    public Empleado(int id, String nombre, List<Acceso> acceso, Zona z) {
-        super(id,nombre,acceso);
+    public Empleado(int id, String nombre, List<Acceso> acceso, List<Zona> zon, Zona z) {
+        super(id,nombre,acceso,zon);
         this.stand = (Stand)z;
     }
 
@@ -27,7 +27,7 @@ public class Empleado extends Persona {
 
     @Override
     public boolean tieneAcceso(Zona z) {
-        if (z instanceof ZonaComun ||(z instanceof Stand && stand.equals(z))){
+        if (z instanceof ZonaComun ||(z instanceof Stand && stand.equals(z))||estaPermitida(z)){
             return true;
         }else{
             return false;

@@ -6,12 +6,12 @@ import Zona.Escenario;
 import Zona.ZonaComun;
 import java.util.List;
 
-public class Artista extends Persona{
+public class Artista extends PersonaConAccesoRestringido{
     private Escenario escenario;
 
-    public Artista(int id, String nombre, List<Acceso> accesos, Zona z) {
+    public Artista(int id, String nombre, List<Acceso> accesos,List<Zona> zon, Zona z) {
 
-        super(id, nombre, accesos);
+        super(id, nombre, accesos, zon);
         this.escenario = (Escenario)z;
     }
 
@@ -28,9 +28,8 @@ public class Artista extends Persona{
     }
 
     @Override
-    //En caso de agregar otra zona restringida a la cual un artista tendria acceso, agregarla con otro ||
     public boolean tieneAcceso(Zona z) {
-        if (z instanceof ZonaComun ||(z instanceof Escenario && escenario.equals(z))){
+        if (z instanceof ZonaComun ||(z instanceof Escenario && escenario.equals(z))||estaPermitida(z)){
             return true;
         }else{
             return false;

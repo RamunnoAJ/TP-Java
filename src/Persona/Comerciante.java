@@ -6,11 +6,11 @@ import Zona.Stand;
 import Zona.ZonaComun;
 import Zona.Zona;
 
-public class Comerciante extends Persona{
+public class Comerciante extends PersonaConAccesoRestringido{
     private Stand stand;
 
-    public Comerciante(int id, String nombre, List<Acceso> accesos, Zona z) {
-        super(id, nombre, accesos);
+    public Comerciante(int id, String nombre, List<Acceso> accesos, List<Zona> zon, Zona z) {
+        super(id, nombre, accesos,zon);
         this.stand = (Stand)z;
     }
 
@@ -27,9 +27,8 @@ public class Comerciante extends Persona{
         return "Comerciante. "+super.toString();
     }
 
-    //En caso de agregar otra zona restringida a la cual un artista tendria acceso, agregarla con otro ||
     public boolean tieneAcceso(Zona z) {
-        if (z instanceof ZonaComun ||(z instanceof Stand && stand.equals(z))){
+        if (z instanceof ZonaComun ||(z instanceof Stand && stand.equals(z))||estaPermitida(z)){
             return true;
         }else{
             return false;
