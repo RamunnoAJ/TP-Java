@@ -1,6 +1,6 @@
-package Acceso;
+package acceso;
 
-import Zona.Zona;
+import zona.Zona;
 
 import java.time.LocalDateTime;
 
@@ -52,6 +52,6 @@ public class Acceso {
     }
 
     public String toString() {
-        return zona.toString() + " " + fecha + " " + "Cantidad de minutos en la zona" + cantMinutos + "Acceso" + estado.toString();
+        return zona.toString() + " " + fecha + " " + "Cantidad de minutos en la zona" + cantMinutos + "acceso" + estado.toString();
     }
 }

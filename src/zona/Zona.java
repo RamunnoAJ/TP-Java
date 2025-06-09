@@ -1,6 +1,6 @@
-package Zona;
+package zona;
 
-import Persona.Persona;
+import persona.Persona;
 
 import java.util.LinkedList;
 
@@ -58,4 +58,6 @@ public abstract class Zona {
     public void eliminarPersona(Persona p){
         personas.remove(p);
     }
+
+    public boolean hayEspacio (){return true;}
 }

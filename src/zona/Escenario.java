@@ -1,4 +1,4 @@
-package Zona;
+package zona;
 import java.util.*;
 import java.lang.String;
 
@@ -26,8 +26,8 @@ public class Escenario extends ZonaRestringida{
         }
     }
 
-
-    public void muestraEventosMusicales(){
+//lo unico que se usaria de aca para mostrar el getter de las listas
+    public void muestraEventosMusicales(){ //El muestra lo va a hacer la interfaz grafica
         System.out.println("Eventos musicales: ");
         for(Evento evento : eventos){
             System.out.println(evento.toString());

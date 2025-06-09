@@ -1,10 +1,10 @@
-package Persona;
+package persona;
 
 import java.util.List;
-import Acceso.Acceso;
-import Zona.Zona;
-import Zona.Escenario;
-import Zona.ZonaComun;
+import acceso.Acceso;
+import zona.Zona;
+import zona.Escenario;
+import zona.ZonaComun;
 //No lo puse como persona con acceso restringido porque no puede acceder a ninguna zona que no sean todos los escenarios o las comunes
 //entonces que tenga la lista de zonasPermitidas no tiene sentido
 public class Asistente extends Persona{

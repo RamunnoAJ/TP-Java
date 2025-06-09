@@ -1,4 +1,4 @@
-package Zona;
+package zona;
 
 public abstract class ZonaRestringida extends Zona{
     private int capMax;
@@ -15,6 +15,8 @@ public abstract class ZonaRestringida extends Zona{
     public void setCapMax(int capMax) {
         this.capMax = capMax;
     }
+
+    @Override
     public boolean hayEspacio (){return (capMax>= getPersonas().size());}
 
     @Override

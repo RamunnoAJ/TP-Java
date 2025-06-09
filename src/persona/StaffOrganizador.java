@@ -1,8 +1,8 @@
-package Persona;
+package persona;
 
 import java.util.List;
-import Acceso.Acceso;
-import Zona.Zona;
+import acceso.Acceso;
+import zona.Zona;
 
 public class StaffOrganizador extends Persona{
     public StaffOrganizador(int id, String nombre, List<Acceso> accesos) {

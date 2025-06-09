@@ -1,9 +1,9 @@
-package Persona;
+package persona;
 
-import Acceso.Acceso;
-import Zona.Zona;
-import Zona.Escenario;
-import Zona.ZonaComun;
+import acceso.Acceso;
+import zona.Zona;
+import zona.Escenario;
+import zona.ZonaComun;
 import java.util.List;
 
 public class Artista extends PersonaConAccesoRestringido{

@@ -1,8 +1,8 @@
-package Persona;
+package persona;
 
 import java.util.List;
-import Acceso.Acceso;
-import Zona.Zona;
+import acceso.Acceso;
+import zona.Zona;
 
 abstract public class Persona {
     private int id;
@@ -50,7 +50,7 @@ abstract public class Persona {
         return id==p.getId();
     }
 
-    public void mostrarAccesos(){
+    public void mostrarAccesos(){//NO va a ser la persona la que muestre los datos, va a ser la interfaz grafica
         for(Acceso a : accesos){
             System.out.println(a.toString());
         }

@@ -1,9 +1,9 @@
-package Persona;
+package persona;
 
-import Acceso.Acceso;
+import acceso.Acceso;
 
 import java.util.List;
-import Zona.Zona;
+import zona.Zona;
 
 public abstract class PersonaConAccesoRestringido extends Persona {
     private List<Zona> zonasPermitidas;
@@ -21,7 +21,6 @@ public abstract class PersonaConAccesoRestringido extends Persona {
         this.zonasPermitidas = zonasPermitidas;
     }
 
-    //o hacer con iterador?
     public boolean estaPermitida(Zona zona) {
         return zonasPermitidas.contains(zona);
     }

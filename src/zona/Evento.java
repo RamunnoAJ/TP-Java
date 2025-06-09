@@ -1,4 +1,4 @@
-package Zona;
+package zona;
 
 public class Evento {
     private String fecha;

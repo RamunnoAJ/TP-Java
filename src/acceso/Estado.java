@@ -1,4 +1,4 @@
-package Acceso;
+package acceso;
 
 public enum Estado {
     AUTORIZADO {

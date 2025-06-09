@@ -1,11 +1,15 @@
-package Zona;
+package zona;
 
-import Persona.Comerciante;
+import persona.Comerciante;
+
+import java.util.List;
 
 public class Stand extends ZonaRestringida {
     private String ubicacion;
     private ZonaComun zonacomun;
     private Comerciante responsable;
+
+    private List<Comerciante> empleados;
 
     public Stand(String codigo, String descripcion, int CapMax, String ubicacion, ZonaComun zonacomun, Comerciante comerciante) {
         super(codigo, descripcion, CapMax);
@@ -36,5 +40,13 @@ public class Stand extends ZonaRestringida {
 
     public void setResponsable(Comerciante comerciante) {
         this.responsable = comerciante;
+    }
+
+    public List<Comerciante> getEmpleados(){
+        return empleados;
+    }
+
+    public void setEmpleados(List<Comerciante> empleados) {
+        this.empleados = empleados;
     }
 }
