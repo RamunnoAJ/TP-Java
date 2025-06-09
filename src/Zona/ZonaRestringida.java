@@ -15,6 +15,7 @@ public abstract class ZonaRestringida extends Zona{
     public void setCapMax(int capMax) {
         this.capMax = capMax;
     }
+    public boolean hayEspacio (){return (capMax>= getPersonas().size());}
 
     @Override
     public String toString() {
