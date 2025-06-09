@@ -1,4 +1,4 @@
-package zona;
+package dominio.zona;
 
 public abstract class  ZonaComun extends Zona{
     public ZonaComun(String codigo, String descripcion) {

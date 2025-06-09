@@ -1,6 +1,6 @@
-package zona;
+package dominio.zona;
 
-import persona.Comerciante;
+import dominio.persona.Comerciante;
 
 import java.util.List;
 

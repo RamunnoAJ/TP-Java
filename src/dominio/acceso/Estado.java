@@ -1,4 +1,4 @@
-package acceso;
+package dominio.acceso;
 
 public enum Estado {
     AUTORIZADO {

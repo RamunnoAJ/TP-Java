@@ -1,8 +1,9 @@
-package persona;
+package dominio.persona;
+
+import dominio.acceso.Acceso;
+import dominio.zona.Zona;
 
 import java.util.List;
-import acceso.Acceso;
-import zona.Zona;
 
 public class StaffOrganizador extends Persona{
     public StaffOrganizador(int id, String nombre, List<Acceso> accesos) {

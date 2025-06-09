@@ -1,4 +1,4 @@
-package zona;
+package dominio.zona;
 
 public class Evento {
     private String fecha;

@@ -1,6 +1,7 @@
-package acceso;
+package dominio.acceso;
 
-import zona.Zona;
+
+import dominio.zona.Zona;
 
 import java.time.LocalDateTime;
 

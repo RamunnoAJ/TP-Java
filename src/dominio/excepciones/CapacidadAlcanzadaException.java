@@ -1,6 +1,7 @@
-package excepciones;
+package dominio.excepciones;
 
-import zona.ZonaRestringida;
+
+import dominio.zona.ZonaRestringida;
 
 public class CapacidadAlcanzadaException extends RuntimeException {
     public CapacidadAlcanzadaException(ZonaRestringida z) {

@@ -1,13 +1,14 @@
-package control;
+package dominio.control;
 
-import acceso.Acceso;
-import acceso.Estado;
-import excepciones.AccesoNoAutorizadoException;
-import excepciones.CapacidadAlcanzadaException;
-import excepciones.ZonaInvalidaException;
-import persona.Persona;
-import zona.Zona;
-import zona.ZonaRestringida;
+
+import dominio.acceso.Acceso;
+import dominio.acceso.Estado;
+import dominio.excepciones.AccesoNoAutorizadoException;
+import dominio.excepciones.CapacidadAlcanzadaException;
+import dominio.excepciones.ZonaInvalidaException;
+import dominio.persona.Persona;
+import dominio.zona.Zona;
+import dominio.zona.ZonaRestringida;
 
 public class ControlAccesos {
 
@@ -34,9 +35,9 @@ public class ControlAccesos {
     }
 
     public void mostrarDatos(Persona p) { // Esto se reemplaza, no se deberían de hacer los println en la capa del dominio
-        System.out.println("Datos de la persona");
+        System.out.println("Datos de la dominio.persona");
         System.out.println(p);
-        System.out.println("Historial de accesos de la persona");
+        System.out.println("Historial de accesos de la dominio.persona");
         p.mostrarAccesos();
     }
 }

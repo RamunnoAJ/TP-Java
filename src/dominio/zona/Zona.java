@@ -1,6 +1,6 @@
-package zona;
+package dominio.zona;
 
-import persona.Persona;
+import dominio.persona.Persona;
 
 import java.util.LinkedList;
 

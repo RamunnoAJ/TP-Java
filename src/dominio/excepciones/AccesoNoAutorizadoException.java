@@ -1,7 +1,8 @@
-package excepciones;
+package dominio.excepciones;
 
-import persona.Persona;
-import zona.Zona;
+
+import dominio.persona.Persona;
+import dominio.zona.Zona;
 
 public class AccesoNoAutorizadoException extends RuntimeException {
     public AccesoNoAutorizadoException(Persona p, Zona z) {

@@ -1,4 +1,4 @@
-package zona;
+package dominio.zona;
 
 public abstract class ZonaRestringida extends Zona{
     private int capMax;

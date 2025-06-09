@@ -1,9 +1,9 @@
-package persona;
+package dominio.persona;
 
-import acceso.Acceso;
+import dominio.acceso.Acceso;
+import dominio.zona.Zona;
 
 import java.util.List;
-import zona.Zona;
 
 public abstract class PersonaConAccesoRestringido extends Persona {
     private List<Zona> zonasPermitidas;

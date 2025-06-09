@@ -1,15 +1,16 @@
-package persona;
+package dominio.persona;
 
-import acceso.Acceso;
-import zona.Zona;
-import zona.Escenario;
-import zona.ZonaComun;
+import dominio.acceso.Acceso;
+import dominio.zona.Escenario;
+import dominio.zona.Zona;
+import dominio.zona.ZonaComun;
+
 import java.util.List;
 
 public class Artista extends PersonaConAccesoRestringido{
     private Escenario escenario;
 
-    public Artista(int id, String nombre, List<Acceso> accesos,List<Zona> zon, Zona z) {
+    public Artista(int id, String nombre, List<Acceso> accesos, List<Zona> zon, Zona z) {
 
         super(id, nombre, accesos, zon);
         this.escenario = (Escenario)z;

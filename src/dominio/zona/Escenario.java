@@ -1,4 +1,5 @@
-package zona;
+package dominio.zona;
+
 import java.util.*;
 import java.lang.String;
 

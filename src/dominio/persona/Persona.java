@@ -1,8 +1,9 @@
-package persona;
+package dominio.persona;
+
+import dominio.acceso.Acceso;
+import dominio.zona.Zona;
 
 import java.util.List;
-import acceso.Acceso;
-import zona.Zona;
 
 abstract public class Persona {
     private int id;

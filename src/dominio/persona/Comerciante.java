@@ -1,10 +1,12 @@
-package persona;
+package dominio.persona;
+
+import dominio.acceso.Acceso;
+import dominio.zona.Stand;
+import dominio.zona.Zona;
+import dominio.zona.ZonaComun;
 
 import java.util.List;
-import acceso.Acceso;
-import zona.Stand;
-import zona.ZonaComun;
-import zona.Zona;
+
 
 public class Comerciante extends PersonaConAccesoRestringido{
     private Stand stand;
