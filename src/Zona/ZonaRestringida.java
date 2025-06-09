@@ -1,6 +1,6 @@
 package Zona;
 
-public class ZonaRestringida extends Zona{
+public abstract class ZonaRestringida extends Zona{
     private int capMax;
 
     ZonaRestringida(String codigo, String descripcion, int capMax) {
