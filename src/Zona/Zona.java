@@ -48,6 +48,14 @@ public abstract class Zona {
     }
 
     public boolean equals(Zona o) {
-        return codigo.equals(o.getCodigo())&&descripcion.equals(o.getDescripcion());
+        return codigo.equals(o.getCodigo());
+    }
+
+    public void agregarPersona(Persona p){
+        personas.add(p);
+    }
+
+    public void eliminarPersona(Persona p){
+        personas.remove(p);
     }
 }

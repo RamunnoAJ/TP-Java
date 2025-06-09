@@ -55,5 +55,9 @@ abstract public class Persona {
             System.out.println(a.toString());
         }
     }
+
+    public void agregarAcceso(Acceso a) {
+        accesos.add(a);
+    }
 }
 
