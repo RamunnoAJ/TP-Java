@@ -18,8 +18,12 @@ public class Escenario extends ZonaRestringida{
         return eventos;
     }
 
+    public void setEventos(List<Evento> eventos) {
+        this.eventos = eventos;
+    }
+
     public boolean agregarEventoMusical(Evento evento) {
-        if (evento != null) {
+        if (evento != null && !eventos.contains(evento)) {
             eventos.add(evento);
             return true;
         } else {
@@ -27,11 +31,6 @@ public class Escenario extends ZonaRestringida{
         }
     }
 
-//lo unico que se usaria de aca para mostrar el getter de las listas
-    public void muestraEventosMusicales(){ //El muestra lo va a hacer la interfaz grafica
-        System.out.println("Eventos musicales: ");
-        for(Evento evento : eventos){
-            System.out.println(evento.toString());
-        }
-    }
+    //BORRO EL MUESTRA DE LOS EVENTOS MUSICALES, ESO LO TENDRIA QUE IR HACIENDO LA INTERFAZ GRAFICA
+    //CON EL GETTER DE LA LISTA DE EVENTOS, NO TENDRIA QUE ESTAR EN LA CLASE DOMINIO
 }

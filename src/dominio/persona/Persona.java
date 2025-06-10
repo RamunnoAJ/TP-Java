@@ -44,21 +44,25 @@ abstract public class Persona {
         return "Nombre: " + nombre + ", Id: " + id + "}";
     }
 
-    //reescribir para todas las funciones sino se hacen abstractas
     public abstract boolean tieneAcceso(Zona z);
 
     public boolean equals(Persona p){
         return id==p.getId();
     }
 
-    public void mostrarAccesos(){//NO va a ser la persona la que muestre los datos, va a ser la interfaz grafica
-        for(Acceso a : accesos){
-            System.out.println(a.toString());
+    public boolean agregarAcceso(Acceso a) {
+        if (accesos == null || accesos.contains(a)){
+            return false;
+        }else{
+            accesos.add(a);
+            return true;
         }
     }
 
-    public void agregarAcceso(Acceso a) {
-        accesos.add(a);
+    public void mostrarAccesos(){
+        //NO va a ser la persona la que muestre los datos, va a ser la interfaz grafica
+        //Asi que esta funcion no tendria que estar en persona
     }
 }
+
 

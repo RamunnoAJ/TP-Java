@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 public class Acceso {
     private Zona zona;
     private LocalDateTime fecha;
-
     private int cantMinutos;
     private Estado estado;
 
@@ -34,7 +33,6 @@ public class Acceso {
     public void setFecha(LocalDateTime fecha) {
         this.fecha = fecha;
     }
-
 
     public Estado getEstado() {
         return estado;

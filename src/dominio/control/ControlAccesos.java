@@ -36,9 +36,7 @@ public class ControlAccesos {
     }
 
     public void mostrarDatos(Persona p) { // Esto se reemplaza, no se deberían de hacer los println en la capa del dominio
-        System.out.println("Datos de la dominio.persona");
-        System.out.println(p);
-        System.out.println("Historial de accesos de la dominio.persona");
-        p.mostrarAccesos();
+        //LA FUNCION MOSTRARDATOS VA A EXISTIR EN ESTA CLASE, PERO NO HARIA NINGUN PRINTLN, SINO QUE TENDRIA QUE DEVOLVER ALGO
+        //PARA QUE LO HAGA LA CLASE DE LA INTERFAZ GRAFICA, EN RESUMEN ES HACER UN TOSTRING DE LA PERSONA Y UN p.mostraraccesos();
     }
 }

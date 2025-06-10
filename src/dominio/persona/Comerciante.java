@@ -26,11 +26,10 @@ public class Comerciante extends PersonaConAccesoRestringido{
 
     @Override
     public String toString() {
-        return "Comerciante. "+super.toString();
+        return "Comerciante. " + super.toString();
     }
 
     public boolean tieneAcceso(Zona z) {
         return (z instanceof ZonaComun ||(z instanceof Stand && stand.equals(z))||estaPermitida(z));
-
     }
 }

@@ -9,6 +9,7 @@ public abstract class Zona {
     private String descripcion;
     private LinkedList<Persona> personas;
 
+    //TENDREMOS QUE PONER A PERSONAS (LA LISTA) EN EL CONSTRUCTOR?
     public Zona(String codigo, String descripcion){
         this.codigo = codigo;
         this.descripcion = descripcion;
@@ -40,7 +41,7 @@ public abstract class Zona {
 
     @Override
     public String toString() {
-        return "Zona{" + "codigo=" + codigo + ", descripcion=" + descripcion + '}';
+        return "{" + "codigo=" + codigo + ", descripcion=" + descripcion + '}';
     }
 
     public int getCapMax(){
@@ -51,12 +52,22 @@ public abstract class Zona {
         return codigo.equals(o.getCodigo());
     }
 
-    public void agregarPersona(Persona p){
-        personas.add(p);
+    public boolean agregarPersona(Persona p) {
+        if (personas != null && !personas.contains(p)) {
+            personas.add(p);
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public void eliminarPersona(Persona p){
-        personas.remove(p);
+    public boolean eliminarPersona(Persona p) {
+        if (personas != null && personas.contains(p)) {
+            personas.remove(p);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public boolean hayEspacio (){return true;}

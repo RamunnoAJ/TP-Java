@@ -8,7 +8,6 @@ public class Stand extends ZonaRestringida {
     private String ubicacion;
     private ZonaComun zonacomun;
     private Comerciante responsable;
-
     private List<Comerciante> empleados;
 
     public Stand(String codigo, String descripcion, int CapMax, String ubicacion, ZonaComun zonacomun, Comerciante comerciante) {
@@ -48,5 +47,23 @@ public class Stand extends ZonaRestringida {
 
     public void setEmpleados(List<Comerciante> empleados) {
         this.empleados = empleados;
+    }
+
+    public boolean agregarEmpleado(Comerciante comerciante) {
+        if(empleados.contains(comerciante)||empleados==null){
+            return false;
+        } else {
+            empleados.add(comerciante);
+            return true;
+        }
+    }
+
+    public boolean eliminarEmpleado(Comerciante comerciante) {
+        if(!empleados.contains(comerciante)||empleados==null){
+            return false;
+        }else{
+            empleados.remove(comerciante);
+            return true;
+        }
     }
 }

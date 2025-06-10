@@ -17,7 +17,7 @@ public abstract class ZonaRestringida extends Zona{
     }
 
     @Override
-    public boolean hayEspacio (){return (capMax>= getPersonas().size());}
+    public boolean hayEspacio (){return (capMax> getPersonas().size());}
 
     @Override
     public String toString() {
