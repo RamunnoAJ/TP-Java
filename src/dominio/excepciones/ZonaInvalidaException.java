@@ -1,7 +1,9 @@
 package dominio.excepciones;
 
+import dominio.zona.Zona;
+
 public class ZonaInvalidaException extends RuntimeException {
-    public ZonaInvalidaException() {
-      super("Zona inválida");
-    }//para diferenciar si es nulo
+    public ZonaInvalidaException(Zona origen) {
+        super("la zona "+origen+"no es valida");
+    }
 }

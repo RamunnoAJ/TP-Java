@@ -5,6 +5,7 @@ import dominio.acceso.Acceso;
 import dominio.acceso.Estado;
 import dominio.excepciones.AccesoNoAutorizadoException;
 import dominio.excepciones.CapacidadAlcanzadaException;
+import dominio.excepciones.ControlInvalidoException;
 import dominio.excepciones.ZonaInvalidaException;
 import dominio.persona.Persona;
 import dominio.zona.Zona;
@@ -15,7 +16,7 @@ public class ControlAccesos {
     public void moverPersona(Persona p, Zona origen, Zona destino)
             throws AccesoNoAutorizadoException, CapacidadAlcanzadaException, ZonaInvalidaException {
         if (destino == null || origen == null || origen.equals(destino)) {
-            throw new ZonaInvalidaException();
+            throw new ControlInvalidoException(origen,destino);
         } else if (!p.tieneAcceso(destino)) {
             registrarAcceso(p, destino, Estado.DENEGADO);
             throw new AccesoNoAutorizadoException(p, destino);
