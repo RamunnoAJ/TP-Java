@@ -104,13 +104,13 @@ class MenuFrame extends JFrame {
         optionsPanel.setOpaque(false);
         optionsPanel.setLayout(new GridLayout(2, 2, 20, 20));
 
-        String[] opciones = {"Opcion 1", "Opcion 2", "Opcion 3", "Opcion 4"};
+        String[] opciones = {"Busqueda de Persona", "Mover Persona", "Reporte de Zonas", "Reporte de los Stands"};
         for (String opcion : opciones) {
             JButton button = new JButton(opcion);
             button.setFont(new Font("Arial", Font.BOLD, 18));
-            button.setForeground(Color.WHITE);
+            button.setForeground(Color.BLACK);
             button.setBackground(new Color(70, 70, 70, 150));
-            button.setBorder(BorderFactory.createLineBorder(Color.WHITE, 2));
+            button.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
             button.setPreferredSize(new Dimension(200, 100));
             optionsPanel.add(button);
         }
