@@ -22,8 +22,8 @@ class InicioFrame extends JFrame {
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 Graphics2D g2d = (Graphics2D) g;
-                Color color1 = new Color(50, 0, 100);   // Morado oscuro
-                Color color2 = new Color(150, 30, 0);     // Rojo oscuro
+                Color color1 = new Color(0, 0, 0);   // Morado oscuro
+                Color color2 = new Color(255, 255, 255);     // Rojo oscuro
                 GradientPaint gp = new GradientPaint(0, 0, color1, getWidth(), getHeight(), color2);
                 g2d.setPaint(gp);
                 g2d.fillRect(0, 0, getWidth(), getHeight());
@@ -53,7 +53,7 @@ class InicioFrame extends JFrame {
         JButton entrarButton = new JButton("ENTRAR AL MENÚ");
         entrarButton.setFont(new Font("Arial", Font.BOLD, 18));
         entrarButton.setForeground(Color.WHITE);
-        entrarButton.setBackground(new Color(70, 70, 70));
+        entrarButton.setBackground(new Color(66, 64, 64));
         entrarButton.setBorder(BorderFactory.createEmptyBorder(10, 30, 10, 30));
         entrarButton.addActionListener(new ActionListener() {
             @Override
@@ -86,8 +86,8 @@ class MenuFrame extends JFrame {
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 Graphics2D g2d = (Graphics2D) g;
-                Color color1 = new Color(0, 50, 100);   // Azul oscuro
-                Color color2 = new Color(0, 100, 50);     // Verde oscuro
+                Color color1 = new Color(255, 255, 255);   // Azul oscuro
+                Color color2 = new Color(0, 0, 0);     // Verde oscuro
                 GradientPaint gp = new GradientPaint(0, 0, color1, getWidth(), getHeight(), color2);
                 g2d.setPaint(gp);
                 g2d.fillRect(0, 0, getWidth(), getHeight());
@@ -97,14 +97,14 @@ class MenuFrame extends JFrame {
 
         JLabel titleLabel = new JLabel("MENÚ PRINCIPAL", SwingConstants.CENTER);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 36));
-        titleLabel.setForeground(Color.WHITE);
+        titleLabel.setForeground(new Color(0,0,0));
         titleLabel.setBorder(BorderFactory.createEmptyBorder(50, 0, 50, 0));
 
         JPanel optionsPanel = new JPanel();
         optionsPanel.setOpaque(false);
         optionsPanel.setLayout(new GridLayout(2, 2, 20, 20));
 
-        String[] opciones = {"Artistas", "Programación", "Mapa", "Información"};
+        String[] opciones = {"Opcion 1", "Opcion 2", "Opcion 3", "Opcion 4"};
         for (String opcion : opciones) {
             JButton button = new JButton(opcion);
             button.setFont(new Font("Arial", Font.BOLD, 18));
