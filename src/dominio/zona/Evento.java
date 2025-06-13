@@ -1,11 +1,15 @@
 package dominio.zona;
 
-public class Evento {
+import dominio.persona.Artista;
+
+import java.io.Serializable;
+
+public class Evento implements Serializable {
     private String fecha;
     private String hora;
-    private String artista;
+    private Artista artista;
 
-    public Evento(String fecha, String hora, String artista){
+    public Evento(String fecha, String hora, Artista artista){
         this.fecha = fecha;
         this.hora = hora;
         this.artista = artista;
@@ -27,11 +31,11 @@ public class Evento {
         this.hora = hora;
     }
 
-    public String getArtista() {
+    public Artista getArtista() {
         return artista;
     }
 
-    public void setArtista(String artista) {
+    public void setArtista(Artista artista) {
         this.artista = artista;
     }
 

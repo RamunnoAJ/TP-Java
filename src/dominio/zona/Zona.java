@@ -2,9 +2,10 @@ package dominio.zona;
 
 import dominio.persona.Persona;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 
-public abstract class Zona {
+public abstract class Zona implements Serializable {
     private String codigo;
     private String descripcion;
     private LinkedList<Persona> personas;

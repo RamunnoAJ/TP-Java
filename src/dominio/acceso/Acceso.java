@@ -3,9 +3,10 @@ package dominio.acceso;
 
 import dominio.zona.Zona;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Acceso {
+public class Acceso implements Serializable {
     private Zona zona;
     private LocalDateTime fecha;
     private int cantMinutos;

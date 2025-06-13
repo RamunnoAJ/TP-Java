@@ -3,9 +3,10 @@ package dominio.persona;
 import dominio.acceso.Acceso;
 import dominio.zona.Zona;
 
+import java.io.Serializable;
 import java.util.List;
 
-abstract public class Persona {
+abstract public class Persona implements Serializable {
     private int id;
     private String nombre;
     private List<Acceso> accesos;
