@@ -1,8 +1,14 @@
 package GUI;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import dominio.control.Reportes;
+import dominio.persistencia.TestPersistencia;
+import dominio.zona.Zona;
+import dominio.zona.Stand;
+import dominio.persistencia.Persistencia;
+import java.util.List;
+import java.awt.event.*;
 
 public class FestivalApp {
     public static void main(String[] args) {
@@ -17,13 +23,14 @@ class InicioFrame extends JFrame {
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+
         JPanel mainPanel = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 Graphics2D g2d = (Graphics2D) g;
-                Color color1 = new Color(0, 0, 0);   // Morado oscuro
-                Color color2 = new Color(255, 255, 255);     // Rojo oscuro
+                Color color1 = new Color(0, 0, 0);
+                Color color2 = new Color(255, 255, 255);
                 GradientPaint gp = new GradientPaint(0, 0, color1, getWidth(), getHeight(), color2);
                 g2d.setPaint(gp);
                 g2d.fillRect(0, 0, getWidth(), getHeight());
@@ -31,46 +38,36 @@ class InicioFrame extends JFrame {
         };
         mainPanel.setLayout(new BorderLayout());
 
-        // En la clase InicioFrame, reemplaza la creación del logoLabel con:
-
         JLabel logoLabel;
         try {
-            // Cargar la imagen (ajusta la ruta)
             ImageIcon originalIcon = new ImageIcon("imagenF.png");
-
-            // Redimensionar si es necesario (opcional)
             Image scaledImage = originalIcon.getImage().getScaledInstance(300, 300, Image.SCALE_SMOOTH);
             ImageIcon logoIcon = new ImageIcon(scaledImage);
-
             logoLabel = new JLabel(logoIcon, SwingConstants.CENTER);
         } catch (Exception e) {
-            // Si hay error al cargar la imagen, mostrar texto alternativo
             logoLabel = new JLabel("LOGO NO ENCONTRADO", SwingConstants.CENTER);
             logoLabel.setForeground(Color.RED);
-            System.err.println("Error al cargar la imagen: " + e.getMessage());
         }
         logoLabel.setBorder(BorderFactory.createEmptyBorder(20, 0, 20, 0));
+
         JButton entrarButton = new JButton("ENTRAR AL MENÚ");
         entrarButton.setFont(new Font("Arial", Font.BOLD, 18));
         entrarButton.setForeground(Color.WHITE);
         entrarButton.setBackground(new Color(66, 64, 64));
         entrarButton.setBorder(BorderFactory.createEmptyBorder(10, 30, 10, 30));
-        entrarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                dispose();
-                MenuFrame menuFrame = new MenuFrame();
-                menuFrame.setVisible(true);
-            }
+        entrarButton.addActionListener(e -> {
+            dispose();
+            new MenuFrame().setVisible(true);
         });
+
         JPanel buttonPanel = new JPanel();
         buttonPanel.setOpaque(false);
         buttonPanel.add(entrarButton);
         buttonPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 100, 0));
+
         mainPanel.add(logoLabel, BorderLayout.CENTER);
         mainPanel.add(buttonPanel, BorderLayout.SOUTH);
-        add(mainPanel);
+        setContentPane(mainPanel);
     }
 }
 
@@ -86,8 +83,8 @@ class MenuFrame extends JFrame {
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 Graphics2D g2d = (Graphics2D) g;
-                Color color1 = new Color(255, 255, 255);   // Azul oscuro
-                Color color2 = new Color(0, 0, 0);     // Verde oscuro
+                Color color1 = new Color(255, 255, 255);
+                Color color2 = new Color(0, 0, 0);
                 GradientPaint gp = new GradientPaint(0, 0, color1, getWidth(), getHeight(), color2);
                 g2d.setPaint(gp);
                 g2d.fillRect(0, 0, getWidth(), getHeight());
@@ -97,23 +94,30 @@ class MenuFrame extends JFrame {
 
         JLabel titleLabel = new JLabel("MENÚ PRINCIPAL", SwingConstants.CENTER);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 36));
-        titleLabel.setForeground(new Color(0,0,0));
+        titleLabel.setForeground(new Color(0, 0, 0));
         titleLabel.setBorder(BorderFactory.createEmptyBorder(50, 0, 50, 0));
 
-        JPanel optionsPanel = new JPanel();
-        optionsPanel.setOpaque(false);
-        optionsPanel.setLayout(new GridLayout(2, 2, 20, 20));
+        JButton btnBuscarPersona = new JButton("Busqueda de Persona");
+        JButton btnMoverPersona = new JButton("Mover Persona");
+        JButton btnReporteZonas = new JButton("Reporte de Zonas");
+        JButton btnReporteStands = new JButton("Reporte de los Stands");
 
-        String[] opciones = {"Busqueda de Persona", "Mover Persona", "Reporte de Zonas", "Reporte de los Stands"};
-        for (String opcion : opciones) {
-            JButton button = new JButton(opcion);
-            button.setFont(new Font("Arial", Font.BOLD, 18));
-            button.setForeground(Color.BLACK);
-            button.setBackground(new Color(70, 70, 70, 150));
-            button.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
-            button.setPreferredSize(new Dimension(200, 100));
-            optionsPanel.add(button);
-        }
+        btnReporteZonas.addActionListener(e -> {
+            new ReporteFrame("ZONAS").setVisible(true);
+            dispose();
+        });
+
+        btnReporteStands.addActionListener(e -> {
+            new ReporteFrame("STANDS").setVisible(true);
+            dispose();
+        });
+
+        JPanel optionsPanel = new JPanel(new GridLayout(2, 2, 20, 20));
+        optionsPanel.setOpaque(false);
+        optionsPanel.add(btnBuscarPersona);
+        optionsPanel.add(btnMoverPersona);
+        optionsPanel.add(btnReporteZonas);
+        optionsPanel.add(btnReporteStands);
 
         JPanel centerPanel = new JPanel();
         centerPanel.setOpaque(false);
@@ -123,5 +127,39 @@ class MenuFrame extends JFrame {
         mainPanel.add(centerPanel, BorderLayout.CENTER);
 
         add(mainPanel);
+    }
+}
+
+class ReporteFrame extends JFrame {
+    public ReporteFrame(String tipo) {
+        setTitle("Reporte " + tipo);
+        setSize(800, 600);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        JTextArea textArea = new JTextArea(20, 50);
+        textArea.setEditable(false);
+        JScrollPane scroll = new JScrollPane(textArea);
+
+        JButton btnVolver = new JButton("VOLVER");
+        btnVolver.addActionListener(e -> {
+            new MenuFrame().setVisible(true);
+            dispose();
+        });
+
+        JPanel panel = new JPanel(new BorderLayout());
+        panel.add(scroll, BorderLayout.CENTER);
+        JPanel south = new JPanel();
+        south.add(btnVolver);
+        panel.add(south, BorderLayout.SOUTH);
+        setContentPane(panel);
+
+        if ("ZONAS".equals(tipo)) {
+            List<Zona> zonas = Persistencia.cargarZonas();
+            Reportes.generarReporteZonas(zonas, textArea);
+        } else {
+            List<Stand> stands = Persistencia.cargarStands();
+            Reportes.generarReporteStands(stands, textArea);
+        }
     }
 }
