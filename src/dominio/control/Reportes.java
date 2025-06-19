@@ -12,11 +12,13 @@ import dominio.zona.Zona;
 
 public class Reportes implements Serializable {
 
-    public static String generarReporteZonas(List<Zona> zonas, JTextArea area) {
+    public static String generarReporteZonas(List<Zona> zonas) {
         // Va en orden descendente por concurrencia actual
         Collections.sort(zonas, new Comparator<Zona>() {
             @Override
             public int compare(Zona z1, Zona z2) {
+                System.out.println(z1.getPersonas());
+                System.out.println(z2.getPersonas());
                 return Integer.compare(z2.getPersonas().size(), z1.getPersonas().size());
             }
         });
@@ -49,12 +51,10 @@ public class Reportes implements Serializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        // Mostrar en la interfaz gráfica
-        area.setText(sb.toString());
         return sb.toString();
     }
 
-    public static String generarReporteStands(List<Stand> stands, JTextArea area) {
+    public static String generarReporteStands(List<Stand> stands) {
         // Orden alfabético por nombre del responsable como dice la consigna
         Collections.sort(stands, new Comparator<Stand>() {
             @Override
@@ -83,8 +83,6 @@ public class Reportes implements Serializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        // Mostrar en la interfaz gráfica
-        area.setText(sb.toString());
         return sb.toString();
     }
 }

@@ -156,10 +156,12 @@ class ReporteFrame extends JFrame {
 
         if ("ZONAS".equals(tipo)) {
             List<Zona> zonas = Persistencia.cargarZonas();
-            Reportes.generarReporteZonas(zonas, textArea);
+            String reporte = Reportes.generarReporteZonas(zonas);
+            textArea.setText(reporte);
         } else {
             List<Stand> stands = Persistencia.cargarStands();
-            Reportes.generarReporteStands(stands, textArea);
+            String reporte = Reportes.generarReporteStands(stands);
+            textArea.setText(reporte);
         }
     }
 }

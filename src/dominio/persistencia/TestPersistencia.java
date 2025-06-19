@@ -38,40 +38,40 @@ public class TestPersistencia {
         eventos.add(new Evento("2025-01-01", "14:40", new Artista(2, "Emilia mernes", new ArrayList<>(), new ArrayList<>(), null)));
         eventos.add(new Evento("2025-01-01", "18:40", new Artista(3, "Tini tini tini", new ArrayList<>(), new ArrayList<>(), null)));
 
-        Persistencia.guardarLista(zonas, "zonas.dat");
+        Persistencia.guardarZonas(zonas);
         System.out.println("Zonas persistidas exitosamente.");
 
-        Persistencia.guardarLista(personas, "personas.dat");
+        Persistencia.guardarPersonas(personas);
         System.out.println("Personas persistidas exitosamente.");
 
-        Persistencia.guardarLista(accesos, "accesos.dat");
+        Persistencia.guardarAccesos(accesos);
         System.out.println("Accesos persistidas exitosamente.");
 
-        Persistencia.guardarLista(eventos, "eventos.dat");
+        Persistencia.guardarEventos(eventos);
         System.out.println("Eventos persistidas exitosamente.");
 
-        List<Persona> personasLeidas = Persistencia.cargarLista("personas.dat");
+        List<Persona> personasLeidas = Persistencia.cargarPersonas();
         System.out.println("Personas leídas:");
 
         for (Persona p : personasLeidas) {
             System.out.println(p);
         }
 
-        List<Zona> zonasLeidas = Persistencia.cargarLista("zonas.dat");
+        List<Zona> zonasLeidas = Persistencia.cargarZonas();
         System.out.println("Zonas leídas:");
 
         for (Zona z : zonasLeidas) {
             System.out.println(z);
         }
 
-        List<Acceso> accesosLeidos = Persistencia.cargarLista("accesos.dat");
+        List<Acceso> accesosLeidos = Persistencia.cargarAccesos();
         System.out.println("Accesos leídas:");
 
         for (Acceso a : accesosLeidos) {
             System.out.println(a);
         }
 
-        List<Evento> eventosLeidos = Persistencia.cargarLista("eventos.dat");
+        List<Evento> eventosLeidos = Persistencia.cargarEventos();
         System.out.println("Eventos leídas:");
 
         for (Evento e : eventosLeidos) {
