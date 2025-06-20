@@ -232,61 +232,68 @@ class ConsultaAccesosFrame extends JFrame {
 }
 
 class MoverPersonaFrame extends JFrame {
-    private JTextField txtId;
     private JComboBox<Zona> cbDestino;
+    private JComboBox<Persona> cbPersona;
     private ControlAccesos control;
 
     public MoverPersonaFrame() {
         control = new ControlAccesos();
         setTitle("Mover Persona");
-        setSize(400, 250);
+        setSize(800, 600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        setLayout(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(5,5,5,5);
-        gbc.fill = GridBagConstraints.HORIZONTAL;
+        setLayout(new BorderLayout(10, 10));
 
-        // ID Persona
-        gbc.gridx = 0; gbc.gridy = 0;
-        add(new JLabel("ID Persona:"), gbc);
-        txtId = new JTextField(10);
-        gbc.gridx = 1; gbc.gridy = 0;
-        add(txtId, gbc);
+        JPanel centerPanel = new JPanel(new GridLayout(4, 1, 10, 10));
+        centerPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 10, 20));
 
-        // Zona Destino
-        gbc.gridx = 0; gbc.gridy = 1;
-        add(new JLabel("Zona Destino:"), gbc);
+        List<Persona> personas = Persistencia.cargarPersonas();
+        cbPersona = new JComboBox<>(personas.toArray(new Persona[0]));
+        centerPanel.add(new JLabel("Persona:"));
+        centerPanel.add(cbPersona);
+
         List<Zona> zonas = Persistencia.cargarZonas();
         cbDestino = new JComboBox<>(zonas.toArray(new Zona[0]));
-        gbc.gridx = 1; gbc.gridy = 1;
-        add(cbDestino, gbc);
+        centerPanel.add(new JLabel("Zona Destino:"));
+        centerPanel.add(cbDestino);
 
-        // Botón Mover
+        add(centerPanel, BorderLayout.CENTER);
+
+        JPanel southPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 10));
         JButton btnMover = new JButton("Mover");
-        gbc.gridx = 0; gbc.gridy = 2; gbc.gridwidth = 2;
-        add(btnMover, gbc);
+        JButton btnVolver = new JButton("Volver");
+
+        southPanel.add(btnMover);
+        southPanel.add(btnVolver);
+        add(southPanel, BorderLayout.SOUTH);
+
+        btnVolver.addActionListener(e -> {
+            new MenuFrame().setVisible(true);
+            dispose();
+        });
 
         btnMover.addActionListener(e -> {
             try {
-                int id = Integer.parseInt(txtId.getText().trim());
-                Persona p = control.obtenerPersona(id);
-                Zona origen  = control.obtenerZonaActual(p);
+                Persona p = (Persona) cbPersona.getSelectedItem();
+                Zona origen = control.obtenerZonaActual(p);
                 Zona destino = (Zona) cbDestino.getSelectedItem();
                 control.moverPersona(p, origen, destino);
+
                 JOptionPane.showMessageDialog(this,
                         "Persona movida de \"" + origen.getCodigo() +
                                 "\" a \"" + destino.getCodigo() + "\" exitosamente",
                         "Éxito", JOptionPane.INFORMATION_MESSAGE);
+
                 dispose();
                 new MenuFrame().setVisible(true);
+
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(this,
                         "El ID debe ser un número entero",
                         "Error", JOptionPane.ERROR_MESSAGE);
             } catch (AccesoNoAutorizadoException |
-                     CapacidadAlcanzadaException   |
-                     ZonaInvalidaException         |
+                     CapacidadAlcanzadaException |
+                     ZonaInvalidaException |
                      ControlInvalidoException ex) {
                 JOptionPane.showMessageDialog(this,
                         ex.getMessage(),
@@ -300,3 +307,4 @@ class MoverPersonaFrame extends JFrame {
         });
     }
 }
+

@@ -14,7 +14,7 @@ public class Escenario extends ZonaRestringida{
 
     @Override
     public String toString() {
-        return "Escenario. Capacidad Maxima: "+ getCapMax() + super.toString();
+        return "Escenario. " + super.toString();
     }
 
     public List<Evento> getEventos() {

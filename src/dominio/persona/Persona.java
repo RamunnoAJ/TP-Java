@@ -42,13 +42,17 @@ abstract public class Persona implements Serializable {
     }
 
     public String toString() {
-        return "Nombre: " + nombre + ", Id: " + id + "}";
+        return "Nombre: " + nombre + ", Id: " + id;
     }
 
     public abstract boolean tieneAcceso(Zona z);
 
-    public boolean equals(Persona p){
-        return id==p.getId();
+    @Override
+    public boolean equals(Object o){
+        if (this == o) return true;
+        if (!(o instanceof Persona persona)) return false;
+
+        return this.id == persona.getId();
     }
 
     public boolean agregarAcceso(Acceso a) {

@@ -10,7 +10,6 @@ public abstract class Zona implements Serializable {
     private String descripcion;
     private LinkedList<Persona> personas;
 
-    //TENDREMOS QUE PONER A PERSONAS (LA LISTA) EN EL CONSTRUCTOR?
     public Zona(String codigo, String descripcion, LinkedList<Persona> personas){
         this.codigo = codigo;
         this.descripcion = descripcion;
@@ -43,7 +42,7 @@ public abstract class Zona implements Serializable {
 
     @Override
     public String toString() {
-        return "{" + "codigo=" + codigo + ", descripcion=" + descripcion + '}';
+        return "codigo=" + codigo + ", descripcion=" + descripcion;
     }
 
     public int getCapMax(){

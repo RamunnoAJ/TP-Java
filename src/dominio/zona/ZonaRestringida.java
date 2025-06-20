@@ -25,6 +25,6 @@ public abstract class ZonaRestringida extends Zona{
 
     @Override
     public String toString() {
-        return "ZonaRestringida. " + "Capacidad maxima: " + capMax + super.toString();
+        return "Capacidad maxima: " + capMax + super.toString();
     }
 }
