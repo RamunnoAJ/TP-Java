@@ -17,8 +17,6 @@ public class Reportes implements Serializable {
         Collections.sort(zonas, new Comparator<Zona>() {
             @Override
             public int compare(Zona z1, Zona z2) {
-                System.out.println(z1.getPersonas());
-                System.out.println(z2.getPersonas());
                 return Integer.compare(z2.getPersonas().size(), z1.getPersonas().size());
             }
         });

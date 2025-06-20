@@ -9,6 +9,11 @@ import dominio.zona.Stand;
 import dominio.persistencia.Persistencia;
 import java.util.List;
 import java.awt.event.*;
+import dominio.persona.Persona;
+import dominio.excepciones.ControlInvalidoException;
+import dominio.control.ControlAccesos;
+import GUI.ConsultaAccesosFrame;
+
 
 public class FestivalApp {
     public static void main(String[] args) {
@@ -102,6 +107,11 @@ class MenuFrame extends JFrame {
         JButton btnReporteZonas = new JButton("Reporte de Zonas");
         JButton btnReporteStands = new JButton("Reporte de los Stands");
 
+        btnBuscarPersona.addActionListener(e -> {
+            new ConsultaAccesosFrame().setVisible(true);
+            dispose();
+        });
+
         btnReporteZonas.addActionListener(e -> {
             new ReporteFrame("ZONAS").setVisible(true);
             dispose();
@@ -163,5 +173,45 @@ class ReporteFrame extends JFrame {
             String reporte = Reportes.generarReporteStands(stands);
             textArea.setText(reporte);
         }
+    }
+}
+
+class ConsultaAccesosFrame extends JFrame {
+    private JTextField txtId;
+    private JTextArea textArea;
+    private ControlAccesos control;
+
+    public ConsultaAccesosFrame() {
+        control = new ControlAccesos();
+
+        setTitle("Consulta de Persona");
+        setSize(500, 400);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setLayout(new BorderLayout(5,5));
+
+        JPanel pnlNorth = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        pnlNorth.add(new JLabel("ID Persona:"));
+        txtId = new JTextField(8);
+        pnlNorth.add(txtId);
+        JButton btnBuscar = new JButton("Buscar");
+        pnlNorth.add(btnBuscar);
+        add(pnlNorth, BorderLayout.NORTH);
+
+        textArea = new JTextArea();
+        textArea.setEditable(false);
+        add(new JScrollPane(textArea), BorderLayout.CENTER);
+
+        btnBuscar.addActionListener((ActionEvent e) -> {
+            try {
+                int id = Integer.parseInt(txtId.getText().trim());
+                Persona p = control.obtenerPersona(id);
+                textArea.setText(control.mostrarDatos(p));
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "El ID debe ser un número entero", "Error", JOptionPane.ERROR_MESSAGE);
+            } catch (ControlInvalidoException ex) {
+                JOptionPane.showMessageDialog(this, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        });
     }
 }

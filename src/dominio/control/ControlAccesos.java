@@ -11,6 +11,10 @@ import dominio.persona.Persona;
 import dominio.zona.Zona;
 import dominio.zona.ZonaRestringida;
 
+import java.util.Iterator;
+import java.util.List;
+import dominio.persistencia.Persistencia;
+
 public class ControlAccesos {
 
     public void moverPersona(Persona p, Zona origen, Zona destino)
@@ -35,8 +39,46 @@ public class ControlAccesos {
         p.agregarAcceso(a);
     }
 
-    public void mostrarDatos(Persona p) { // Esto se reemplaza, no se deberían de hacer los println en la capa del dominio
-        //LA FUNCION MOSTRARDATOS VA A EXISTIR EN ESTA CLASE, PERO NO HARIA NINGUN PRINTLN, SINO QUE TENDRIA QUE DEVOLVER ALGO
-        //PARA QUE LO HAGA LA CLASE DE LA INTERFAZ GRAFICA, EN RESUMEN ES HACER UN TOSTRING DE LA PERSONA Y UN p.mostraraccesos();
+    public Persona obtenerPersona(int id) throws RuntimeException {
+        List<Persona> personas = Persistencia.cargarPersonas();
+        Iterator<Persona> iter = personas.iterator();
+        Persona encontrada = null;
+        while (iter.hasNext() && encontrada == null) {
+            Persona p = iter.next();
+            if (p.getId() == id) {
+                encontrada = p;
+            }
+        }
+        if (encontrada == null) {
+            throw new RuntimeException("Persona no encontrada con ID: " + id);//me quede dudando, tendremos que usar otras excepciones que las maneje la GUI
+            //osea estara mal que los errores se muestren solo en la consola
+        }
+        return encontrada;
     }
+
+
+
+    public String mostrarDatos(Persona p) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(p.toString()).append("\n"); //Con esto se muestran los datos de la persona
+        sb.append("Accesos:\n");
+        List<Acceso> accesos = p.getAccesos();
+        if (accesos == null || accesos.isEmpty()) {
+            sb.append("  (Sin accesos registrados)\n");
+        } else {
+            for (Acceso a : accesos) { //Esto si para la lista de accesos de cada persona
+                sb.append("  Zona: ")
+                        .append(a.getZona().getCodigo())
+                        .append("  – Fecha: ")
+                        .append(a.getFecha())
+                        .append("  – Duración: ")
+                        .append(a.getCantMinutos()).append(" min")
+                        .append("  – Estado: ")
+                        .append(a.getEstado().name())
+                        .append("\n");
+            }
+        }
+        return sb.toString();
+    }
+
 }
