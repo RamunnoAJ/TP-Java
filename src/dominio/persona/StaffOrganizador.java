@@ -12,7 +12,7 @@ public class StaffOrganizador extends Persona{
 
     @Override
     public String toString() {
-        return "Staff Organizador" + super.toString();
+        return " Staff Organizador. " + super.toString();
     }
 
     @Override

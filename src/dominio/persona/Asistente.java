@@ -14,7 +14,7 @@ public class Asistente extends Persona{
 
     @Override
     public String toString() {
-        return "Asistente. " + super.toString();
+        return " Asistente. " + super.toString();
     }
 
     @Override

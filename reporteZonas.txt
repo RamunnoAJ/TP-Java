@@ -1,0 +1,8 @@
+Zona ESC001 - Escenario Principal: 2 personas
+  Eventos programados:
+    2025-10-10 20:00 - Duki
+    2025-10-10 21:30 - Bizarrap
+Zona ST001 - Stand de Empanadas: 1 personas
+Zona ST002 - Stand de Pizzas: 1 personas
+Zona PAT001 - Patio Norte: 0 personas
+Total de personas en todo el predio: 4

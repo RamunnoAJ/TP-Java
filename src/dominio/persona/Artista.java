@@ -19,7 +19,7 @@ public class Artista extends Persona{
 
     @Override
     public String toString() {
-        return "Artista. "+super.toString();
+        return " Artista. "+super.toString();
     }
 
     public Escenario getEscenario() {

@@ -1,0 +1,7 @@
+Stand ST001 - Ubicación: Zona Norte - Responsable: Don Empanada
+  Empleados:
+    Don Empanada
+Stand ST002 - Ubicación: Zona Norte - Responsable: La Pizza Loca
+  Empleados:
+    Don Empanada
+    La Pizza Loca

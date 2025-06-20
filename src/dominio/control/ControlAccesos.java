@@ -28,9 +28,11 @@ public class ControlAccesos {
             throw new DestinoInvalidoException();
         } else if (!p.tieneAcceso(destino)) {
             registrarAcceso(p, destino, Estado.DENEGADO);
+            Persistencia.guardarPersonas(personas);
             throw new AccesoNoAutorizadoException(p, destino);
         } else if (!destino.hayEspacio()) {
             registrarAcceso(p, destino, Estado.DENEGADO);
+            Persistencia.guardarPersonas(personas);
             throw new CapacidadAlcanzadaException((ZonaRestringida) destino);
         } else {
             if (origen != null) {
@@ -39,6 +41,7 @@ public class ControlAccesos {
             destino.agregarPersona(p);
             registrarAcceso(p, destino, Estado.AUTORIZADO);
             Persistencia.guardarZonas(zonas);
+            Persistencia.guardarPersonas(personas);
         }
     }
 

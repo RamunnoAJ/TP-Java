@@ -42,7 +42,7 @@ public abstract class Zona implements Serializable {
 
     @Override
     public String toString() {
-        return "codigo=" + codigo + ", descripcion=" + descripcion;
+        return " Descripción: " + descripcion + ", Codigo: " + codigo+ ".";
     }
 
     public int getCapMax(){

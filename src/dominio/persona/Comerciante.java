@@ -26,7 +26,7 @@ public class Comerciante extends Persona{
 
     @Override
     public String toString() {
-        return "Comerciante. " + super.toString();
+        return " Comerciante. " + super.toString();
     }
 
     public boolean tieneAcceso(Zona z) {

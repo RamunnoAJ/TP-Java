@@ -7,8 +7,8 @@ import java.io.Serializable;
 import java.util.List;
 
 abstract public class Persona implements Serializable {
-    private int id;
-    private String nombre;
+    private final int id;
+    private final String nombre;
     private List<Acceso> accesos;
 
     public Persona(int id, String nombre, List<Acceso> accesos) {
@@ -33,16 +33,8 @@ abstract public class Persona implements Serializable {
         this.accesos = accesos;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public String toString() {
-        return "Nombre: " + nombre + ", Id: " + id;
+        return " Nombre: " + nombre + ", Id: " + id;
     }
 
     public abstract boolean tieneAcceso(Zona z);
