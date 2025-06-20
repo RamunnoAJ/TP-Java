@@ -3,19 +3,16 @@ package GUI;
 import javax.swing.*;
 import java.awt.*;
 import dominio.control.Reportes;
-import dominio.persistencia.TestPersistencia;
+import dominio.excepciones.NULLdestinoException;
 import dominio.zona.Zona;
 import dominio.zona.Stand;
 import dominio.persistencia.Persistencia;
 import java.util.List;
 import java.awt.event.*;
 import dominio.persona.Persona;
-import dominio.excepciones.ControlInvalidoException;
 import dominio.control.ControlAccesos;
-import GUI.ConsultaAccesosFrame;
 import dominio.excepciones.AccesoNoAutorizadoException;
 import dominio.excepciones.CapacidadAlcanzadaException;
-import dominio.excepciones.ZonaInvalidaException;
 
 
 public class FestivalApp {
@@ -190,7 +187,9 @@ class ConsultaAccesosFrame extends JFrame {
     private ControlAccesos control;
 
     public ConsultaAccesosFrame() {
-        control = new ControlAccesos();
+        List<Zona> zonas = Persistencia.cargarZonas();
+        List<Persona> personas = Persistencia.cargarPersonas();
+        control = new ControlAccesos(zonas, personas);
 
         setTitle("Consulta de Persona");
         setSize(500, 400);
@@ -237,7 +236,10 @@ class MoverPersonaFrame extends JFrame {
     private ControlAccesos control;
 
     public MoverPersonaFrame() {
-        control = new ControlAccesos();
+        List<Zona> zonas = Persistencia.cargarZonas();
+        List<Persona> personas = Persistencia.cargarPersonas();
+        control = new ControlAccesos(zonas, personas);
+
         setTitle("Mover Persona");
         setSize(800, 600);
         setLocationRelativeTo(null);
@@ -247,12 +249,10 @@ class MoverPersonaFrame extends JFrame {
         JPanel centerPanel = new JPanel(new GridLayout(4, 1, 10, 10));
         centerPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 10, 20));
 
-        List<Persona> personas = Persistencia.cargarPersonas();
         cbPersona = new JComboBox<>(personas.toArray(new Persona[0]));
         centerPanel.add(new JLabel("Persona:"));
         centerPanel.add(cbPersona);
 
-        List<Zona> zonas = Persistencia.cargarZonas();
         cbDestino = new JComboBox<>(zonas.toArray(new Zona[0]));
         centerPanel.add(new JLabel("Zona Destino:"));
         centerPanel.add(cbDestino);
@@ -293,8 +293,7 @@ class MoverPersonaFrame extends JFrame {
                         "Error", JOptionPane.ERROR_MESSAGE);
             } catch (AccesoNoAutorizadoException |
                      CapacidadAlcanzadaException |
-                     ZonaInvalidaException |
-                     ControlInvalidoException ex) {
+                     NULLdestinoException ex) {
                 JOptionPane.showMessageDialog(this,
                         ex.getMessage(),
                         "Error de acceso",

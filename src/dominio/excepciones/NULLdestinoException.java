@@ -4,6 +4,6 @@ import dominio.zona.Zona;
 
 public class NULLdestinoException extends RuntimeException {
     public NULLdestinoException() {
-        super("no existe el destino");
+        super("No existe el destino.");
     }
 }

@@ -3,10 +3,7 @@ package dominio.control;
 
 import dominio.acceso.Acceso;
 import dominio.acceso.Estado;
-import dominio.excepciones.AccesoNoAutorizadoException;
-import dominio.excepciones.CapacidadAlcanzadaException;
-import dominio.excepciones.ControlInvalidoException;
-import dominio.excepciones.ZonaInvalidaException;
+import dominio.excepciones.*;
 import dominio.persona.Persona;
 import dominio.zona.Zona;
 import dominio.zona.ZonaRestringida;
@@ -15,11 +12,20 @@ import java.util.List;
 import dominio.persistencia.Persistencia;
 
 public class ControlAccesos {
+    private List<Zona> zonas;
+    private List<Persona> personas;
+
+    public ControlAccesos(List<Zona> zonas, List<Persona> personas){
+        this.zonas = zonas;
+        this.personas = personas;
+    }
 
     public void moverPersona(Persona p, Zona origen, Zona destino)
-            throws AccesoNoAutorizadoException, CapacidadAlcanzadaException, ZonaInvalidaException {
-        if (destino == null || origen == null || origen.equals(destino)) {
-            throw new ControlInvalidoException(origen,destino);
+            throws AccesoNoAutorizadoException, CapacidadAlcanzadaException, DestinoInvalidoException {
+        if (destino == null) {
+            throw new NULLdestinoException();
+        }else if (origen != null && origen.equals(destino)) {
+            throw new DestinoInvalidoException();
         } else if (!p.tieneAcceso(destino)) {
             registrarAcceso(p, destino, Estado.DENEGADO);
             throw new AccesoNoAutorizadoException(p, destino);
@@ -27,9 +33,12 @@ public class ControlAccesos {
             registrarAcceso(p, destino, Estado.DENEGADO);
             throw new CapacidadAlcanzadaException((ZonaRestringida) destino);
         } else {
-            origen.eliminarPersona(p);
+            if (origen != null) {
+                origen.eliminarPersona(p);
+            }
             destino.agregarPersona(p);
             registrarAcceso(p, destino, Estado.AUTORIZADO);
+            Persistencia.guardarZonas(zonas);
         }
     }
 
@@ -38,8 +47,7 @@ public class ControlAccesos {
         p.agregarAcceso(a);
     }
 
-    public Zona obtenerZonaActual(Persona p) throws RuntimeException {
-        List<Zona> zonas = Persistencia.cargarZonas();
+    public Zona obtenerZonaActual(Persona p) {
         Iterator<Zona> it = zonas.iterator();
         Zona encontrada = null;
         while (it.hasNext() && encontrada == null) {
@@ -48,17 +56,10 @@ public class ControlAccesos {
                 encontrada = z;
             }
         }
-        if (encontrada != null) {
-            return encontrada;
-        } else {
-            throw new RuntimeException(
-                    "La persona con ID " + p.getId() + " no está en ninguna zona."
-            );
-        }
+        return encontrada;
     }
 
     public Persona obtenerPersona(int id) throws RuntimeException {
-        List<Persona> personas = Persistencia.cargarPersonas();
         Iterator<Persona> iter = personas.iterator();
         Persona encontrada = null;
         while (iter.hasNext() && encontrada == null) {
@@ -68,8 +69,7 @@ public class ControlAccesos {
             }
         }
         if (encontrada == null) {
-            throw new RuntimeException("Persona no encontrada con ID: " + id);//me quede dudando, tendremos que usar otras excepciones que las maneje la GUI
-            //osea estara mal que los errores se muestren solo en la consola
+            throw new RuntimeException("Persona no encontrada con ID: " + id);
         }
         return encontrada;
     }
