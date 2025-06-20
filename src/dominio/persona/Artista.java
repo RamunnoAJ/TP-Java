@@ -1,18 +1,19 @@
 package dominio.persona;
 
 import dominio.acceso.Acceso;
+import dominio.zona.Backstage;
 import dominio.zona.Escenario;
 import dominio.zona.Zona;
 import dominio.zona.ZonaComun;
 
 import java.util.List;
 
-public class Artista extends PersonaConAccesoRestringido{
+public class Artista extends Persona{
     private Escenario escenario;
 
-    public Artista(int id, String nombre, List<Acceso> accesos, List<Zona> zon, Zona z) {
+    public Artista(int id, String nombre, List<Acceso> accesos, Zona z) {
 
-        super(id, nombre, accesos, zon);
+        super(id, nombre, accesos);
         this.escenario = (Escenario)z;
     }
 
@@ -30,7 +31,7 @@ public class Artista extends PersonaConAccesoRestringido{
 
     @Override
     public boolean tieneAcceso(Zona z) {
-        return (z instanceof ZonaComun ||(z instanceof Escenario && escenario.equals(z))||estaPermitida(z));
+        return (z instanceof ZonaComun ||(z instanceof Escenario && escenario.equals(z))||z instanceof Backstage);
     }
 }
 

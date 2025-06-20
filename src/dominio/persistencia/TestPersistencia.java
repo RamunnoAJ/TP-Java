@@ -19,12 +19,12 @@ public class TestPersistencia {
 
         StaffOrganizador organizador1 = new StaffOrganizador(201, "María", new ArrayList<>());
         StaffOrganizador organizador2 = new StaffOrganizador(202, "José", new ArrayList<>());
-        Artista artista1 = new Artista(301, "Duki", new ArrayList<>(), new ArrayList<>(), null);
-        Artista artista2 = new Artista(302, "Bizarrap", new ArrayList<>(), new ArrayList<>(), null);
-        Comerciante comerciante1 = new Comerciante(101, "Don Empanada", new ArrayList<>(), new ArrayList<>(), null);
-        Comerciante comerciante2 = new Comerciante(102, "La Pizza Loca", new ArrayList<>(), new ArrayList<>(), null);
-        Concurrente concurrente1 = new Concurrente(401, "Lautaro", new ArrayList<>(), new ArrayList<>());
-        Concurrente concurrente2 = new Concurrente(402, "Camila", new ArrayList<>(), new ArrayList<>());
+        Artista artista1 = new Artista(301, "Duki", new ArrayList<>(), null);
+        Artista artista2 = new Artista(302, "Bizarrap", new ArrayList<>(), null);
+        Comerciante comerciante1 = new Comerciante(101, "Don Empanada", new ArrayList<>(), null);
+        Comerciante comerciante2 = new Comerciante(102, "La Pizza Loca", new ArrayList<>(), null);
+        Asistente concurrente1 = new Asistente(401, "Lautaro", new ArrayList<>());
+        Asistente concurrente2 = new Asistente(402, "Camila", new ArrayList<>());
 
         Escenario escenarioPrincipal = new Escenario(
                 "ESC001", "Escenario Principal", new LinkedList<>(), 100, new LinkedList<>());

@@ -10,7 +10,6 @@ import dominio.excepciones.ZonaInvalidaException;
 import dominio.persona.Persona;
 import dominio.zona.Zona;
 import dominio.zona.ZonaRestringida;
-
 import java.util.Iterator;
 import java.util.List;
 import dominio.persistencia.Persistencia;
@@ -37,6 +36,25 @@ public class ControlAccesos {
     private void registrarAcceso(Persona p, Zona z, Estado estado) {
         Acceso a = new Acceso(z, 0, estado);
         p.agregarAcceso(a);
+    }
+
+    public Zona obtenerZonaActual(Persona p) throws RuntimeException {
+        List<Zona> zonas = Persistencia.cargarZonas();
+        Iterator<Zona> it = zonas.iterator();
+        Zona encontrada = null;
+        while (it.hasNext() && encontrada == null) {
+            Zona z = it.next();
+            if (z.estaPersona(p)) {
+                encontrada = z;
+            }
+        }
+        if (encontrada != null) {
+            return encontrada;
+        } else {
+            throw new RuntimeException(
+                    "La persona con ID " + p.getId() + " no está en ninguna zona."
+            );
+        }
     }
 
     public Persona obtenerPersona(int id) throws RuntimeException {

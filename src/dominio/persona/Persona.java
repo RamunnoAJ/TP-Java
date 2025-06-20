@@ -60,10 +60,6 @@ abstract public class Persona implements Serializable {
         }
     }
 
-    public void mostrarAccesos(){
-        //NO va a ser la persona la que muestre los datos, va a ser la interfaz grafica
-        //Asi que esta funcion no tendria que estar en persona
-    }
 }
 
 
