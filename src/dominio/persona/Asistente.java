@@ -18,7 +18,6 @@ public class Asistente extends Persona{
     }
 
     @Override
-
     public boolean tieneAcceso(Zona z) {
         return (z instanceof ZonaComun ||z instanceof Escenario);
     }

@@ -1,10 +1,14 @@
 package dominio.zona;
 
+import dominio.persona.Persona;
+
+import java.util.LinkedList;
+
 public abstract class ZonaRestringida extends Zona{
     private int capMax;
 
-    ZonaRestringida(String codigo, String descripcion, int capMax) {
-        super(codigo, descripcion);
+    ZonaRestringida(String codigo, String descripcion, LinkedList<Persona> personas, int capMax) {
+        super(codigo, descripcion, personas);
         this.capMax=capMax;
     }
 

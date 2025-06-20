@@ -2,10 +2,7 @@ package dominio.persistencia;
 
 import dominio.acceso.Acceso;
 import dominio.acceso.Estado;
-import dominio.persona.Artista;
-import dominio.persona.Comerciante;
-import dominio.persona.Persona;
-import dominio.persona.StaffOrganizador;
+import dominio.persona.*;
 import dominio.zona.*;
 
 import java.util.ArrayList;
@@ -18,64 +15,94 @@ public class TestPersistencia {
         List<Persona> personas = new LinkedList<>();
         List<Acceso> accesos = new ArrayList<>();
         List<Evento> eventos = new ArrayList<>();
+        List<Stand> stands = new ArrayList<>();
 
-        zonas.add(new Escenario("asd", "Escenario re loco", 20));
-        zonas.add(new Stand(
-                "qwe" ,
-                "Nuevo stand",
-                30,
-                "Norte",
-                new PatioDeComidas("comida", "Patio de comidas"),
-                new Comerciante(10, "roberto", new ArrayList<>(), new ArrayList<>(), null)
-        ));
+        StaffOrganizador organizador1 = new StaffOrganizador(201, "María", new ArrayList<>());
+        StaffOrganizador organizador2 = new StaffOrganizador(202, "José", new ArrayList<>());
+        Artista artista1 = new Artista(301, "Duki", new ArrayList<>(), new ArrayList<>(), null);
+        Artista artista2 = new Artista(302, "Bizarrap", new ArrayList<>(), new ArrayList<>(), null);
+        Comerciante comerciante1 = new Comerciante(101, "Don Empanada", new ArrayList<>(), new ArrayList<>(), null);
+        Comerciante comerciante2 = new Comerciante(102, "La Pizza Loca", new ArrayList<>(), new ArrayList<>(), null);
+        Concurrente concurrente1 = new Concurrente(401, "Lautaro", new ArrayList<>(), new ArrayList<>());
+        Concurrente concurrente2 = new Concurrente(402, "Camila", new ArrayList<>(), new ArrayList<>());
 
-        personas.add(new StaffOrganizador(1, "Luis", new ArrayList<>()));
-        personas.add(new StaffOrganizador(2, "Ana", new ArrayList<>()));
+        Escenario escenarioPrincipal = new Escenario(
+                "ESC001", "Escenario Principal", new LinkedList<>(), 100, new LinkedList<>());
 
-        accesos.add(new Acceso(new Escenario("asd", "Escenario re loco", 20), 0, Estado.DENEGADO));
-        accesos.add(new Acceso(new Escenario("asd", "Escenario re loco", 20), 10, Estado.AUTORIZADO));
+        PatioDeComidas patio = new PatioDeComidas(
+                "PAT001", "Patio Norte", new LinkedList<>());
 
-        eventos.add(new Evento("2025-01-01", "14:40", new Artista(2, "Emilia mernes", new ArrayList<>(), new ArrayList<>(), null)));
-        eventos.add(new Evento("2025-01-01", "18:40", new Artista(3, "Tini tini tini", new ArrayList<>(), new ArrayList<>(), null)));
+        Stand stand1 = new Stand(
+                "ST001", "Stand de Empanadas", new LinkedList<>(), 10, "Zona Norte", patio,
+                comerciante1, new ArrayList<>());
+
+        Stand stand2 = new Stand(
+                "ST002", "Stand de Pizzas", new LinkedList<>(), 8, "Zona Norte", patio,
+                comerciante2, new ArrayList<>());
+
+        Acceso acceso1 = new Acceso(escenarioPrincipal, 90, Estado.AUTORIZADO);
+        Acceso acceso2 = new Acceso(escenarioPrincipal, 0, Estado.DENEGADO);
+        Acceso acceso3 = new Acceso(stand1, 10, Estado.AUTORIZADO);
+        Acceso acceso4 = new Acceso(stand2, 15, Estado.AUTORIZADO);
+        Acceso acceso5 = new Acceso(patio, 50, Estado.AUTORIZADO);
+        Acceso acceso6 = new Acceso(escenarioPrincipal, 0, Estado.DENEGADO);
+        Acceso acceso7 = new Acceso(escenarioPrincipal, 30, Estado.AUTORIZADO);
+
+        accesos.add(acceso1);
+        accesos.add(acceso2);
+        accesos.add(acceso3);
+        accesos.add(acceso4);
+        accesos.add(acceso5);
+        accesos.add(acceso6);
+        accesos.add(acceso7);
+
+        Evento evento1 = new Evento("2025-10-10", "20:00", artista1);
+        Evento evento2 = new Evento("2025-10-10", "21:30", artista2);
+
+        escenarioPrincipal.agregarEventoMusical(evento1);
+        escenarioPrincipal.agregarEventoMusical(evento2);
+
+
+        escenarioPrincipal.agregarPersona(concurrente1);
+        escenarioPrincipal.agregarPersona(concurrente2);
+        stand1.agregarEmpleado(comerciante1);
+        stand1.agregarPersona(organizador1);
+        stand2.agregarEmpleado(comerciante1);
+        stand2.agregarEmpleado(comerciante2);
+        stand2.agregarPersona(organizador2);
+
+        concurrente1.agregarAcceso(acceso1);
+        concurrente1.agregarAcceso(acceso3);
+        concurrente1.agregarAcceso(acceso5);
+        concurrente1.agregarAcceso(acceso7);
+        concurrente2.agregarAcceso(acceso2);
+        concurrente2.agregarAcceso(acceso4);
+        concurrente2.agregarAcceso(acceso6);
+
+        personas.add(organizador1);
+        personas.add(organizador2);
+        personas.add(artista1);
+        personas.add(artista2);
+        personas.add(comerciante1);
+        personas.add(comerciante2);
+        personas.add(concurrente1);
+        personas.add(concurrente2);
+
+        stands.add(stand1);
+        stands.add(stand2);
+
+        eventos.add(evento1);
+        eventos.add(evento2);
+
+        zonas.add(escenarioPrincipal);
+        zonas.add(patio);
+        zonas.add(stand1);
+        zonas.add(stand2);
 
         Persistencia.guardarZonas(zonas);
-        System.out.println("Zonas persistidas exitosamente.");
-
         Persistencia.guardarPersonas(personas);
-        System.out.println("Personas persistidas exitosamente.");
-
         Persistencia.guardarAccesos(accesos);
-        System.out.println("Accesos persistidas exitosamente.");
-
         Persistencia.guardarEventos(eventos);
-        System.out.println("Eventos persistidas exitosamente.");
-
-        List<Persona> personasLeidas = Persistencia.cargarPersonas();
-        System.out.println("Personas leídas:");
-
-        for (Persona p : personasLeidas) {
-            System.out.println(p);
-        }
-
-        List<Zona> zonasLeidas = Persistencia.cargarZonas();
-        System.out.println("Zonas leídas:");
-
-        for (Zona z : zonasLeidas) {
-            System.out.println(z);
-        }
-
-        List<Acceso> accesosLeidos = Persistencia.cargarAccesos();
-        System.out.println("Accesos leídas:");
-
-        for (Acceso a : accesosLeidos) {
-            System.out.println(a);
-        }
-
-        List<Evento> eventosLeidos = Persistencia.cargarEventos();
-        System.out.println("Eventos leídas:");
-
-        for (Evento e : eventosLeidos) {
-            System.out.println(e);
-        }
+        Persistencia.guardarStands(stands);
     }
 }

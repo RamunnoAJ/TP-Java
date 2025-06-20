@@ -1,12 +1,15 @@
 package dominio.zona;
 
+import dominio.persona.Persona;
+
 import java.util.*;
 import java.lang.String;
 
 public class Escenario extends ZonaRestringida{
     private List<Evento> eventos;
-    public Escenario(String codigo, String descripcion, int capMax){
-        super(codigo, descripcion,capMax);
+    public Escenario(String codigo, String descripcion, LinkedList<Persona> personas, int capMax, List<Evento> eventos){
+        super(codigo, descripcion, personas, capMax);
+        this.eventos = eventos != null ? eventos :new ArrayList<>();
     }
 
     @Override

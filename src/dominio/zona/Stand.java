@@ -1,7 +1,10 @@
 package dominio.zona;
 
 import dominio.persona.Comerciante;
+import dominio.persona.Persona;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Stand extends ZonaRestringida {
@@ -10,11 +13,12 @@ public class Stand extends ZonaRestringida {
     private Comerciante responsable;
     private List<Comerciante> empleados;
 
-    public Stand(String codigo, String descripcion, int CapMax, String ubicacion, ZonaComun zonacomun, Comerciante comerciante) {
-        super(codigo, descripcion, CapMax);
+    public Stand(String codigo, String descripcion, LinkedList<Persona> personas, int CapMax, String ubicacion, ZonaComun zonacomun, Comerciante responsable, List<Comerciante> empleados) {
+        super(codigo, descripcion, personas, CapMax);
         this.ubicacion = ubicacion;
         this.zonacomun = zonacomun;
-        this.responsable = comerciante;
+        this.responsable = responsable;
+        this.empleados = empleados != null ? empleados : new ArrayList<>();
     }
 
     public String getUbicacion() {

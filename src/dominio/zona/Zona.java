@@ -11,9 +11,10 @@ public abstract class Zona implements Serializable {
     private LinkedList<Persona> personas;
 
     //TENDREMOS QUE PONER A PERSONAS (LA LISTA) EN EL CONSTRUCTOR?
-    public Zona(String codigo, String descripcion){
+    public Zona(String codigo, String descripcion, LinkedList<Persona> personas){
         this.codigo = codigo;
         this.descripcion = descripcion;
+        this.personas = personas != null ? personas : new LinkedList<>();
     }
 
     public String getCodigo() {
@@ -72,4 +73,8 @@ public abstract class Zona implements Serializable {
     }
 
     public boolean hayEspacio (){return true;}
+
+    public boolean estaPersona(Persona p) {
+        return personas != null && personas.contains(p);
+    }
 }
