@@ -63,8 +63,9 @@ public class MoverPersonaFrame extends JFrame {
                 Zona destino = (Zona) cbDestino.getSelectedItem();
                 control.moverPersona(p, origen, destino);
 
+                String codOrigen = (origen != null ? origen.getCodigo() : "ninguna");
                 JOptionPane.showMessageDialog(this,
-                        "Persona movida de \"" + origen.getCodigo() +
+                        "Persona movida de \"" + codOrigen +
                                 "\" a \"" + destino.getCodigo() + "\" exitosamente",
                         "Éxito", JOptionPane.INFORMATION_MESSAGE);
 

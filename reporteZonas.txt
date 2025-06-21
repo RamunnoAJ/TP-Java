@@ -1,6 +1,6 @@
-Zona C001 - Zona de comidas principal: 1 personas
-Zona C002 - Zona de comidas veganas: 1 personas
+Zona C002 - Zona de comidas veganas: 2 personas
 Zona B001 - Backstage VIP: 0 personas
+Zona C001 - Zona de comidas principal: 0 personas
 Zona E001 - Escenario rock: 0 personas
   Eventos programados:
 Zona S001 - Stand de bebidas: 0 personas
