@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Stand extends ZonaRestringida {
     private String ubicacion;
-    private transient ZonaComun zonacomun;
+    private ZonaComun zonacomun;
     private Comerciante responsable;
     private List<Comerciante> empleados;
 

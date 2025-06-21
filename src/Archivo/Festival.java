@@ -1,5 +1,5 @@
 package Archivo;
-import dominio.zona.Zona;
+import Zona.Zona;
 import java.util.List;
 
 public class Festival {
