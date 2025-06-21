@@ -5,14 +5,15 @@ import dominio.zona.Zona;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-
+import com.google.gson.annotations.SerializedName;
 public class Acceso implements Serializable {
     private Zona zona;
     private LocalDateTime fecha;
+    @SerializedName("cantMinutos")
     private int duracion;
     private Estado estado;
 
-    public Acceso(Zona zona, int duracion, Estado estado) {
+    public Acceso(Zona zona, LocalDateTime fecha, int duracion, Estado estado) {
         this.zona = zona;
         this.fecha = LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS);
         this.duracion = duracion;

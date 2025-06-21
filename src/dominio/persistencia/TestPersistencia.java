@@ -4,6 +4,8 @@ import dominio.acceso.Acceso;
 import dominio.acceso.Estado;
 import dominio.persona.*;
 import dominio.zona.*;
+
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -39,13 +41,13 @@ public class TestPersistencia {
                 "ST002", "Stand de Pizzas", new LinkedList<>(), 8, "Zona Norte", patio,
                 comerciante2, new ArrayList<>());
 
-        Acceso acceso1 = new Acceso(escenarioPrincipal, 90, Estado.AUTORIZADO);
-        Acceso acceso2 = new Acceso(escenarioPrincipal, 0, Estado.DENEGADO);
-        Acceso acceso3 = new Acceso(stand1, 10, Estado.AUTORIZADO);
-        Acceso acceso4 = new Acceso(stand2, 15, Estado.AUTORIZADO);
-        Acceso acceso5 = new Acceso(patio, 50, Estado.AUTORIZADO);
-        Acceso acceso6 = new Acceso(escenarioPrincipal, 0, Estado.DENEGADO);
-        Acceso acceso7 = new Acceso(escenarioPrincipal, 30, Estado.AUTORIZADO);
+        Acceso acceso1 = new Acceso(escenarioPrincipal, LocalDateTime.now(),90, Estado.AUTORIZADO);
+        Acceso acceso2 = new Acceso(escenarioPrincipal,LocalDateTime.now(), 0, Estado.DENEGADO);
+        Acceso acceso3 = new Acceso(stand1,LocalDateTime.now(), 10, Estado.AUTORIZADO);
+        Acceso acceso4 = new Acceso(stand2,LocalDateTime.now(), 15, Estado.AUTORIZADO);
+        Acceso acceso5 = new Acceso(patio,LocalDateTime.now(), 50, Estado.AUTORIZADO);
+        Acceso acceso6 = new Acceso(escenarioPrincipal, LocalDateTime.now(),0, Estado.DENEGADO);
+        Acceso acceso7 = new Acceso(escenarioPrincipal,LocalDateTime.now(), 30, Estado.AUTORIZADO);
 
         accesos.add(acceso1);
         accesos.add(acceso2);

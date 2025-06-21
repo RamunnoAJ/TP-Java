@@ -57,7 +57,7 @@ public class ControlAccesos {
             );
             anterior.setDuracion((int) mins);
         }
-        Acceso nuevo = new Acceso(z, 0, estado);
+        Acceso nuevo = new Acceso(z, LocalDateTime.now(),0, estado);
         p.agregarAcceso(nuevo);
     }
 

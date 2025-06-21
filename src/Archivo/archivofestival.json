@@ -1,5 +1,4 @@
-{
-  "Zonas": [
+[
     {
       "codigo": "AA110",
       "descripcion": "Escenario La Casita del Blues",
@@ -236,17 +235,7 @@
             "cantMinutos": 120,
             "estado": "AUTORIZADO"
           }
-        ],
-        "zonaspermitidas": [
-          {"zona": "AA110"},
-          {"zona": "AA111"},
-          {"zona": "AA112"},
-          {"zona": "BB110"},
-          {"zona": "BB111"},
-          {"zona": "BB112"},
-          {"zona": "BB115"},
-          {"zona": "CC113"},
-          {"zona": "CC110"}]
+        ]
       }
     },
     {
@@ -270,17 +259,7 @@
             "cantMinutos": 15,
             "estado": "AUTORIZADO"
           }
-        ],
-        "zonaspermitidas": [
-          {"zona": "AA110"},
-          {"zona": "AA111"},
-          {"zona": "AA112"},
-          {"zona": "BB110"},
-          {"zona": "BB111"},
-          {"zona": "BB112"},
-          {"zona": "BB115"},
-          {"zona": "CC113"},
-          {"zona": "CC110"}]
+        ]
       }
     },
     {
@@ -297,17 +276,7 @@
             "cantMinutos": 15,
             "estado": "AUTORIZADO"
           }
-        ],
-        "zonaspermitidas": [
-          {"zona": "AA110"},
-          {"zona": "AA111"},
-          {"zona": "AA112"},
-          {"zona": "BB110"},
-          {"zona": "BB111"},
-          {"zona": "BB112"},
-          {"zona": "BB115"},
-          {"zona": "CC113"},
-          {"zona": "CC110"}]
+        ]
       }
     }
   ]
@@ -562,17 +531,7 @@
                 "cantMinutos": 180,
                 "estado": "AUTORIZADO"
               }
-            ],
-            "zonaspermitidas": [
-              {"zona": "AA110"},
-              {"zona": "AA111"},
-              {"zona": "AA112"},
-              {"zona": "BB110"},
-              {"zona": "BB111"},
-              {"zona": "BB112"},
-              {"zona": "BB115"},
-              {"zona": "CC114"},
-              {"zona": "CC111"}]
+            ]
           }
         },
         {
@@ -596,17 +555,7 @@
                 "cantMinutos": 180,
                 "estado": "AUTORIZADO"
               }
-            ],
-            "zonaspermitidas": [
-              {"zona": "AA110"},
-              {"zona": "AA111"},
-              {"zona": "AA112"},
-              {"zona": "BB110"},
-              {"zona": "BB111"},
-              {"zona": "BB112"},
-              {"zona": "BB115"},
-              {"zona": "CC114"},
-              {"zona": "CC111"}]
+            ]
           }
         },
         {
@@ -623,17 +572,7 @@
                 "cantMinutos": 15,
                 "estado": "AUTORIZADO"
               }
-            ],
-            "zonaspermitidas": [
-              {"zona": "AA110"},
-              {"zona": "AA111"},
-              {"zona": "AA112"},
-              {"zona": "BB110"},
-              {"zona": "BB111"},
-              {"zona": "BB112"},
-              {"zona": "BB115"},
-              {"zona": "CC114"},
-              {"zona": "CC111"}]
+            ]
           }
         }
       ]
@@ -884,17 +823,7 @@
                 "cantMinutos": 60,
                 "estado": "AUTORIZADO"
               }
-            ],
-            "zonaspermitidas": [
-              {"zona": "AA110"},
-              {"zona": "AA111"},
-              {"zona": "AA112"},
-              {"zona": "BB110"},
-              {"zona": "BB111"},
-              {"zona": "BB112"},
-              {"zona": "BB115"},
-              {"zona": "CC115"},
-              {"zona": "CC112"}]
+            ]
           }
         },
         {
@@ -911,17 +840,7 @@
                 "cantMinutos": 240,
                 "estado": "AUTORIZADO"
               }
-            ],
-            "zonaspermitidas": [
-              {"zona": "AA110"},
-              {"zona": "AA111"},
-              {"zona": "AA112"},
-              {"zona": "BB110"},
-              {"zona": "BB111"},
-              {"zona": "BB112"},
-              {"zona": "BB115"},
-              {"zona": "CC115"},
-              {"zona": "CC112"}]
+            ]
           }
         },
         {
@@ -938,17 +857,7 @@
                 "cantMinutos": 90,
                 "estado": "AUTORIZADO"
               }
-            ],
-            "zonaspermitidas": [
-              {"zona": "AA110"},
-              {"zona": "AA111"},
-              {"zona": "AA112"},
-              {"zona": "BB110"},
-              {"zona": "BB111"},
-              {"zona": "BB112"},
-              {"zona": "BB115"},
-              {"zona": "CC115"},
-              {"zona": "CC112"}]
+            ]
           }
         }
       ]
@@ -1165,17 +1074,6 @@
               "cantMinutos": 180,
               "estado": "AUTORIZADO"
             }
-          ],
-          "zonaspermitidas": [
-            {"zona": "AA110"},
-            {"zona": "AA111"},
-            {"zona": "AA112"},
-            {"zona": "BB110"},
-            {"zona": "BB111"},
-            {"zona": "BB112"},
-            {"zona": "BB115"},
-            {"zona": "CC113"},
-            {"zona": "CC110"}
           ]
         },
         {
@@ -1196,17 +1094,6 @@
               "cantMinutos": 15,
               "estado": "AUTORIZADO"
             }
-          ],
-          "zonaspermitidas": [
-            {"zona": "AA110"},
-            {"zona": "AA111"},
-            {"zona": "AA112"},
-            {"zona": "BB110"},
-            {"zona": "BB111"},
-            {"zona": "BB112"},
-            {"zona": "BB115"},
-            {"zona": "CC113"},
-            {"zona": "CC110"}
           ]
         }
       ],
@@ -1234,17 +1121,7 @@
               "cantMinutos": 180,
               "estado": "AUTORIZADO"
             }
-          ],
-          "zonaspermitidas": [
-            {"zona": "AA110"},
-            {"zona": "AA111"},
-            {"zona": "AA112"},
-            {"zona": "BB110"},
-            {"zona": "BB111"},
-            {"zona": "BB112"},
-            {"zona": "BB115"},
-            {"zona": "CC114"},
-            {"zona": "CC111"}]
+          ]
         },
         {
           "id": "00330",
@@ -1264,17 +1141,7 @@
               "cantMinutos": 180,
               "estado": "AUTORIZADO"
             }
-          ],
-          "zonaspermitidas": [
-            {"zona": "AA110"},
-            {"zona": "AA111"},
-            {"zona": "AA112"},
-            {"zona": "BB110"},
-            {"zona": "BB111"},
-            {"zona": "BB112"},
-            {"zona": "BB115"},
-            {"zona": "CC114"},
-            {"zona": "CC111"}]
+          ]
         }
       ],
       "CapMax": 5
@@ -1294,17 +1161,7 @@
               "cantMinutos": 60,
               "estado": "AUTORIZADO"
             }
-          ],
-          "zonaspermitidas": [
-            {"zona": "AA110"},
-            {"zona": "AA111"},
-            {"zona": "AA112"},
-            {"zona": "BB110"},
-            {"zona": "BB111"},
-            {"zona": "BB112"},
-            {"zona": "BB115"},
-            {"zona": "CC115"},
-            {"zona": "CC112"}]
+          ]
         },
         {
           "id": "00420",
@@ -1317,17 +1174,7 @@
             "cantMinutos": 120,
             "estado": "AUTORIZADO"
           }
-          ],
-          "zonaspermitidas": [
-            {"zona": "AA110"},
-            {"zona": "AA111"},
-            {"zona": "AA112"},
-            {"zona": "BB110"},
-            {"zona": "BB111"},
-            {"zona": "BB112"},
-            {"zona": "BB115"},
-            {"zona": "CC115"},
-            {"zona": "CC112"}]
+          ]
         }
       ],
       "CapMax": 5
@@ -1347,17 +1194,7 @@
               "cantMinutos": 120,
               "estado": "AUTORIZADO"
             }
-          ],
-          "zonaspermitidas": [
-            {"zona": "AA110"},
-            {"zona": "AA111"},
-            {"zona": "AA112"},
-            {"zona": "BB110"},
-            {"zona": "BB111"},
-            {"zona": "BB112"},
-            {"zona": "BB115"},
-            {"zona": "CC113"},
-            {"zona": "CC110"}]
+          ]
         },
 
         {
@@ -1371,17 +1208,7 @@
               "cantMinutos": 90,
               "estado": "AUTORIZADO"
             }
-          ],
-          "zonaspermitidas": [
-            {"zona": "AA110"},
-            {"zona": "AA111"},
-            {"zona": "AA112"},
-            {"zona": "BB110"},
-            {"zona": "BB111"},
-            {"zona": "BB112"},
-            {"zona": "BB115"},
-            {"zona": "CC113"},
-            {"zona": "CC110"}]
+          ]
         }
       ],
       "CapMax": 20
@@ -1401,18 +1228,7 @@
               "cantMinutos": 180,
               "estado": "AUTORIZADO"
             }
-          ],
-          "zonaspermitidas": [
-            {"zona": "AA110"},
-            {"zona": "AA111"},
-            {"zona": "AA112"},
-            {"zona": "BB110"},
-            {"zona": "BB111"},
-            {"zona": "BB112"},
-            {"zona": "BB115"},
-            {"zona": "CC114"},
-            {"zona": "CC111"}
-            ]
+          ]
         },
 
         {
@@ -1426,17 +1242,7 @@
               "cantMinutos": 120,
               "estado": "AUTORIZADO"
             }
-          ],
-          "zonaspermitidas": [
-            {"zona": "AA110"},
-            {"zona": "AA111"},
-            {"zona": "AA112"},
-            {"zona": "BB110"},
-            {"zona": "BB111"},
-            {"zona": "BB112"},
-            {"zona": "BB115"},
-            {"zona": "CC114"},
-            {"zona": "CC111"}]
+          ]
         }
       ],
       "CapMax": 20
@@ -1456,17 +1262,7 @@
               "cantMinutos": 120,
               "estado": "AUTORIZADO"
             }
-          ],
-          "zonaspermitidas": [
-            {"zona": "AA110"},
-            {"zona": "AA111"},
-            {"zona": "AA112"},
-            {"zona": "BB110"},
-            {"zona": "BB111"},
-            {"zona": "BB112"},
-            {"zona": "BB115"},
-            {"zona": "CC115"},
-            {"zona": "CC112"}]
+          ]
         },
         {
           "id": "22018",
@@ -1479,17 +1275,6 @@
               "cantMinutos": 120,
               "estado": "AUTORIZADO"
             }
-          ],
-          "zonaspermitidas": [
-            {"zona": "AA110"},
-            {"zona": "AA111"},
-            {"zona": "AA112"},
-            {"zona": "BB110"},
-            {"zona": "BB111"},
-            {"zona": "BB112"},
-            {"zona": "BB115"},
-            {"zona": "CC115"},
-            {"zona": "CC112"}
           ]
         }
 
@@ -1497,7 +1282,7 @@
       "CapMax": 20
     },
     {
-      "codigo": "CC116",
+      "codigo": "CC016",
       "descripcion": "Deposito Insumos",
       "personas": [
         {
@@ -1505,22 +1290,12 @@
           "nombre": "Lorenzo Festino",
           "accesos": [
             {
-              "zona": "CC116",
+              "zona": "CC016",
               "fecha": "1 de Abril de 2025",
               "hora": "13:30",
               "cantMinutos": 120,
               "estado": "AUTORIZADO"
             }
-          ],
-          "zonaspermitidas": [
-            {"zona": "AA110"},
-            {"zona": "AA111"},
-            {"zona": "AA112"},
-            {"zona": "BB110"},
-            {"zona": "BB111"},
-            {"zona": "BB112"},
-            {"zona": "BB115"},
-            {"zona": "CC116"}
           ]
         }
       ],
@@ -1542,23 +1317,12 @@
               "cantMinutos": 240,
               "estado": "AUTORIZADO"
             }
-          ],
-          "zonaspermitidas": [
-            {"zona": "AA110"},
-            {"zona": "AA111"},
-            {"zona": "AA112"},
-            {"zona": "BB110"},
-            {"zona": "BB111"},
-            {"zona": "BB112"},
-            {"zona": "BB115"},
-            {"zona": "DD110"},
-            {"zona": "CC116"}
           ]
         }
        ],
           "ubicacion": "Patio de Comidas 1",
           "zonacomun": "BB110",
-          "comerciante": {
+          "responsable": {
             "id": "33001",
             "nombre": "Maria Laura Ross",
             "accesos": [
@@ -1570,22 +1334,11 @@
                 "estado": "AUTORIZADO"
               }
             ],
-            "zonaspermitidas": [
-              {"zona": "AA110"},
-              {"zona": "AA111"},
-              {"zona": "AA112"},
-              {"zona": "BB110"},
-              {"zona": "BB111"},
-              {"zona": "BB112"},
-              {"zona": "BB115"},
-              {"zona": "DD110"},
-              {"zona": "CC116"}
-            ],
-            "stand": "DD110",
-            "empleados": [
-              { "id":"22098" }
-            ]
-          }
+            "stand": "DD110"
+          },
+          "empleados": [
+            { "id":"22098"}
+          ]
     },
         {
           "codigo": "DD111",
@@ -1603,18 +1356,7 @@
                   "cantMinutos": 240,
                   "estado": "AUTORIZADO"
                 }
-              ],
-              "zonaspermitidas": [
-              {"zona": "AA110"},
-              {"zona": "AA111"},
-              {"zona": "AA112"},
-              {"zona": "BB110"},
-              {"zona": "BB111"},
-              {"zona": "BB112"},
-              {"zona": "BB115"},
-              {"zona": "DD111"},
-              {"zona": "CC116"}
-            ]
+              ]
             },
             {
               "id": "22109",
@@ -1627,23 +1369,12 @@
                   "cantMinutos": 180,
                   "estado": "AUTORIZADO"
                 }
-              ],
-              "zonaspermitidas": [
-                {"zona": "AA110"},
-                {"zona": "AA111"},
-                {"zona": "AA112"},
-                {"zona": "BB110"},
-                {"zona": "BB111"},
-                {"zona": "BB112"},
-                {"zona": "BB115"},
-                {"zona": "DD111"},
-                {"zona": "CC116"}
               ]
             }
             ],
               "ubicacion": "Patio de Comidas 2 Veggie Y Sin Tacc",
               "zonacomun": "BB110",
-              "comerciante": {
+              "responsable": {
                 "id": "33002",
                 "nombre": "Carlota Mers",
                 "accesos": [
@@ -1655,23 +1386,12 @@
                     "estado": "AUTORIZADO"
                   }
                 ],
-                  "zonaspermitidas": [
-                    {"zona": "AA110"},
-                    {"zona": "AA111"},
-                    {"zona": "AA112"},
-                    {"zona": "BB110"},
-                    {"zona": "BB111"},
-                    {"zona": "BB112"},
-                    {"zona": "BB115"},
-                    {"zona": "DD111"},
-                    {"zona": "CC116"}
-                  ],
-                "stand": "DD111",
-                "empleados": [
-                  {"id": "22099"},
-                  { "id":"22109" }
-                ]
-              }
+                "stand": "DD111"
+              },
+              "empleados": [
+                 { "id":"22099"},
+                  { "id":"22109"}
+              ]
             },
             {
               "codigo": "DD112",
@@ -1689,17 +1409,6 @@
                       "cantMinutos": 240,
                       "estado": "AUTORIZADO"
                     }
-                  ],
-                  "zonaspermitidas": [
-                    {"zona": "AA110"},
-                    {"zona": "AA111"},
-                    {"zona": "AA112"},
-                    {"zona": "BB110"},
-                    {"zona": "BB111"},
-                    {"zona": "BB112"},
-                    {"zona": "BB115"},
-                    {"zona": "DD112"},
-                    {"zona": "CC116"}
                   ]
                 },
                 {
@@ -1713,23 +1422,12 @@
                       "cantMinutos": 180,
                       "estado": "AUTORIZADO"
                     }
-                  ],
-                  "zonaspermitidas": [
-                    {"zona": "AA110"},
-                    {"zona": "AA111"},
-                    {"zona": "AA112"},
-                    {"zona": "BB110"},
-                    {"zona": "BB111"},
-                    {"zona": "BB112"},
-                    {"zona": "BB115"},
-                    {"zona": "DD112"},
-                    {"zona": "CC116"}
                   ]
                 }
               ],
               "ubicacion": "Zona de Recreación",
               "zonacomun": "BB115",
-              "comerciante": {
+              "responsable": {
                 "id": "33003",
                 "nombre": "Dante Klein",
                 "accesos": [
@@ -1741,23 +1439,11 @@
                     "estado": "AUTORIZADO"
                   }
                 ],
-                "zonaspermitidas": [
-                  {"zona": "AA110"},
-                  {"zona": "AA111"},
-                  {"zona": "AA112"},
-                  {"zona": "BB110"},
-                  {"zona": "BB111"},
-                  {"zona": "BB112"},
-                  {"zona": "BB115"},
-                  {"zona": "DD112"},
-                  {"zona": "CC116"}
-                ],
-                "stand": "DD112",
-                "empleados": [
-                  {"id": "22100"},
-                  { "id":"22106"}
-                ]
-                }
+                "stand": "DD112"
+                },
+              "empleados": [
+                { "id":"22100"},
+                { "id":"22106"}
+              ]
               }
-          ]
-        }
+]
