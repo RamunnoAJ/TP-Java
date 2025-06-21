@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<festival>
+    <zonas>
+        <patioDeComidas>
+            <codigo>C001</codigo>
+            <descripcion>Zona de comidas principal</descripcion>
+        </patioDeComidas>
+
+        <patioDeComidas>
+            <codigo>C002</codigo>
+            <descripcion>Zona de comidas veganas</descripcion>
+        </patioDeComidas>
+
+        <stand>
+            <codigo>S001</codigo>
+            <descripcion>Stand de bebidas</descripcion>
+            <capMax>5</capMax>
+            <ubicacion>Bloque A</ubicacion>
+            <zonaComun>C001</zonaComun>
+            <responsable>1</responsable>
+            <empleados>
+                <empleado>2</empleado>
+                <empleado>3</empleado>
+            </empleados>
+        </stand>
+
+        <stand>
+            <codigo>S002</codigo>
+            <descripcion>Stand de postres</descripcion>
+            <capMax>4</capMax>
+            <ubicacion>Bloque B</ubicacion>
+            <zonaComun>C002</zonaComun>
+            <responsable>6</responsable>
+            <empleados>
+                <empleado>7</empleado>
+            </empleados>
+        </stand>
+
+        <escenario>
+            <codigo>E001</codigo>
+            <descripcion>Escenario rock</descripcion>
+            <capMax>200</capMax>
+        </escenario>
+
+        <backstage>
+            <codigo>B001</codigo>
+            <descripcion>Backstage VIP</descripcion>
+            <capMax>15</capMax>
+        </backstage>
+    </zonas>
+
+    <personas>
+        <comerciante>
+            <id>1</id>
+            <nombre>Juan Pérez</nombre>
+            <stand>S001</stand>
+        </comerciante>
+        <comerciante>
+            <id>2</id>
+            <nombre>Ana López</nombre>
+            <stand>S001</stand>
+        </comerciante>
+        <comerciante>
+            <id>3</id>
+            <nombre>Marco Díaz</nombre>
+            <stand>S001</stand>
+        </comerciante>
+
+        <comerciante>
+            <id>6</id>
+            <nombre>Camila Torres</nombre>
+            <stand>S002</stand>
+        </comerciante>
+        <comerciante>
+            <id>7</id>
+            <nombre>Valentín Ríos</nombre>
+            <stand>S002</stand>
+        </comerciante>
+
+        <artista>
+            <id>4</id>
+            <nombre>Lali Espósito</nombre>
+            <escenario>E001</escenario>
+        </artista>
+        <artista>
+            <id>8</id>
+            <nombre>Fito Páez</nombre>
+            <escenario>E001</escenario>
+        </artista>
+
+        <asistente>
+            <id>5</id>
+            <nombre>Pedro García</nombre>
+        </asistente>
+        <asistente>
+            <id>9</id>
+            <nombre>Luis Gómez</nombre>
+        </asistente>
+        <asistente>
+            <id>10</id>
+            <nombre>Sofía Martínez</nombre>
+        </asistente>
+    </personas>
+
+    <accesos>
+        <acceso>
+            <persona>5</persona>
+            <zona>C001</zona>
+            <duracion>45</duracion>
+            <estado>AUTORIZADO</estado>
+        </acceso>
+        <acceso>
+            <persona>5</persona>
+            <zona>B001</zona>
+            <duracion>60</duracion>
+            <estado>DENEGADO</estado>
+        </acceso>
+        <acceso>
+            <persona>4</persona>
+            <zona>B001</zona>
+            <duracion>90</duracion>
+            <estado>AUTORIZADO</estado>
+        </acceso>
+        <acceso>
+            <persona>9</persona>
+            <zona>C002</zona>
+            <duracion>20</duracion>
+            <estado>AUTORIZADO</estado>
+        </acceso>
+        <acceso>
+            <persona>10</persona>
+            <zona>E001</zona>
+            <duracion>15</duracion>
+            <estado>DENEGADO</estado>
+        </acceso>
+        <acceso>
+            <persona>8</persona>
+            <zona>B001</zona>
+            <duracion>30</duracion>
+            <estado>AUTORIZADO</estado>
+        </acceso>
+    </accesos>
+</festival>
