@@ -21,7 +21,9 @@ public class Escenario extends Zona{
     public String toString() {
         return "Escenario. Capacidad Maxima: "+ capMax + super.toString();
     }
-
+    public List<Evento> getEventos() {
+        return eventos;
+    }
     public void mostrarEventos(){
         System.out.println("Eventos musicales: ");
         for(Evento evento : eventos){
