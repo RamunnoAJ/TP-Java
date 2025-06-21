@@ -31,7 +31,6 @@ public class Reportes implements Serializable {
                         zona.getCodigo(), zona.getDescripcion(), concurrencia);
                 sb.append(linea).append("\n");
                 writer.println(linea);
-
                 if (zona instanceof Escenario) {
                     sb.append("  Eventos programados:\n");
                     writer.println("  Eventos programados:");

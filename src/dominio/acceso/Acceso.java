@@ -53,7 +53,7 @@ public class Acceso implements Serializable {
     }
 
     public String toString() {
-        return String.format("Zona: %s  – Fecha: %s  – Duración: %d min  – Estado: %s",
-                zona.getCodigo(), fecha, duracion, estado);
+        return String.format("Zona:  %s (%s)  –  Fecha: %s  – Duración: %d min  – Estado: %s",
+                zona.getDescripcion(), zona.getCodigo(), fecha, duracion, estado);
     }
 }

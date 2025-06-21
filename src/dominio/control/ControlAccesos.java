@@ -93,22 +93,14 @@ public class ControlAccesos {
 
     public String mostrarDatos(Persona p) {
         StringBuilder sb = new StringBuilder();
-        sb.append(p.toString()).append("\n"); //Con esto se muestran los datos de la persona
+        sb.append(p.toString()).append("\n");
         sb.append("Accesos:\n");
         List<Acceso> accesos = p.getAccesos();
         if (accesos == null || accesos.isEmpty()) {
             sb.append("  (Sin accesos registrados)\n");
         } else {
-            for (Acceso a : accesos) { //Esto si para la lista de accesos de cada persona
-                sb.append("  Zona: ")
-                        .append(a.getZona().getCodigo())
-                        .append("  – Fecha: ")
-                        .append(a.getFecha())
-                        .append("  – Duración: ")
-                        .append(a.getDuracion()).append(" min")
-                        .append("  – Estado: ")
-                        .append(a.getEstado().name())
-                        .append("\n");
+            for (Acceso a : accesos) {
+                sb.append(a.toString()).append("\n");
             }
         }
         return sb.toString();
