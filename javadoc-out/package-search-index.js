@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"cargador"},{"l":"dominio.acceso"},{"l":"dominio.control"},{"l":"dominio.excepciones"},{"l":"dominio.persistencia"},{"l":"dominio.persona"},{"l":"dominio.zona"},{"l":"GUI"}];updateSearchResults();
