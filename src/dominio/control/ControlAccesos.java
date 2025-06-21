@@ -5,12 +5,15 @@ import dominio.acceso.Acceso;
 import dominio.acceso.Estado;
 import dominio.excepciones.*;
 import dominio.persona.Persona;
+import dominio.zona.Stand;
 import dominio.zona.Zona;
 import dominio.zona.ZonaRestringida;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import dominio.persistencia.Persistencia;
 
 public class ControlAccesos {
@@ -19,6 +22,28 @@ public class ControlAccesos {
 
     public ControlAccesos(List<Zona> zonas, List<Persona> personas){
         this.zonas = zonas;
+        this.personas = personas;
+    }
+
+    public List<Stand> getStands() {
+        return zonas.stream()
+                .filter(z -> z instanceof Stand)
+                .map(z -> (Stand) z)
+                .collect(Collectors.toList());
+    }
+
+
+    public List<Zona> getZonas() {
+        return zonas;
+    }
+
+    public void setZonas(List<Zona> zonas) {
+        this.zonas = zonas;
+    }
+    public List<Persona> getPersonas() {
+        return personas;
+    }
+    public void setPersonas(List<Persona> personas) {
         this.personas = personas;
     }
 

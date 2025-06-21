@@ -8,6 +8,7 @@ import dominio.zona.Zona;
 import javax.swing.*;
 import java.awt.*;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ReporteFrame extends JFrame {
     public ReporteFrame(String tipo) {
@@ -34,11 +35,11 @@ public class ReporteFrame extends JFrame {
         setContentPane(panel);
 
         if ("ZONAS".equals(tipo)) {
-            java.util.List<Zona> zonas = Persistencia.cargarZonas();
+            List<Zona> zonas = FestivalApp.control.getZonas();
             String reporte = Reportes.generarReporteZonas(zonas);
             textArea.setText(reporte);
         } else {
-            List<Stand> stands = Persistencia.cargarStands();
+            List<Stand> stands = FestivalApp.control.getStands();
             String reporte = Reportes.generarReporteStands(stands);
             textArea.setText(reporte);
         }

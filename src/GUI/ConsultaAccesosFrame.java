@@ -16,9 +16,8 @@ public class ConsultaAccesosFrame extends JFrame {
     private ControlAccesos control;
 
     public ConsultaAccesosFrame() {
-        List<Zona> zonas = Persistencia.cargarZonas();
-        List<Persona> personas = Persistencia.cargarPersonas();
-        control = new ControlAccesos(zonas, personas);
+        // Utiliza el ControlAccesos inicializado en FestivalApp
+        control = FestivalApp.control;  // Evita recargar datos y asegura coherencia
 
         setTitle("Consulta de Persona");
         setSize(500, 400);

@@ -18,9 +18,11 @@ public class MoverPersonaFrame extends JFrame {
     private ControlAccesos control;
 
     public MoverPersonaFrame() {
-        List<Zona> zonas = Persistencia.cargarZonas();
-        List<Persona> personas = Persistencia.cargarPersonas();
-        control = new ControlAccesos(zonas, personas);
+        // Utiliza el ControlAccesos inicializado en FestivalApp
+        control = FestivalApp.control;  // Instancia compartida
+        // Obtener las mismas zonas y personas cargadas inicialmente
+        List<Zona> zonas = control.getZonas();
+        List<Persona> personas = control.getPersonas();
 
         setTitle("Mover Persona");
         setSize(800, 600);

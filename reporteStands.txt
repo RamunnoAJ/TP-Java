@@ -1,7 +1,7 @@
-Stand ST001 - Ubicación: Zona Norte - Responsable: Don Empanada
+Stand S002 - Ubicación: Bloque B - Responsable: Camila Torres
   Empleados:
-    Don Empanada
-Stand ST002 - Ubicación: Zona Norte - Responsable: La Pizza Loca
+    Valentín Ríos
+Stand S001 - Ubicación: Bloque A - Responsable: Juan Pérez
   Empleados:
-    Don Empanada
-    La Pizza Loca
+    Ana López
+    Marco Díaz
