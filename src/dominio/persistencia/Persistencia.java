@@ -3,6 +3,9 @@ package dominio.persistencia;
 import java.io.*;
 import java.util.List;
 
+/**
+ * Utilidades para persistir y recuperar listas de objetos en archivos.
+ */
 public class Persistencia {
 
     private static final String ZONAS_FILE  = "zonas.dat";
@@ -11,7 +14,14 @@ public class Persistencia {
     private static final String ACCESOS_FILE = "accesos.dat";
     private static final String EVENTOS_FILE = "eventos.dat";
 
-    // Preguntar si podemos usar tipos genéricos (La <T>) o tenemos que implementar un guardar y cargar para cada tipo de lista
+    /**
+     * Serializa y guarda una lista de objetos en un archivo.
+     *
+     * @param lista   la lista de objetos a guardar
+     * @param archivo la ruta del archivo donde se almacenará la lista
+     * @param <T>     el tipo de los objetos de la lista
+     * @throws RuntimeException si ocurre un error de E/S al escribir el archivo
+     */
     private static <T> void guardarLista(List<T> lista, String archivo) {
         try {
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(archivo));
@@ -21,6 +31,14 @@ public class Persistencia {
         }
     }
 
+    /**
+     * Carga y deserializa una lista de objetos desde un archivo.
+     *
+     * @param archivo la ruta del archivo desde el cual se leerá la lista
+     * @param <T>     el tipo de los objetos de la lista
+     * @return la lista de objetos recuperada del archivo
+     * @throws RuntimeException si ocurre un error de E/S o el archivo no contiene la clase esperada
+     */
     @SuppressWarnings("unchecked")
     private static <T> List<T> cargarLista(String archivo) {
         try {
@@ -34,6 +52,7 @@ public class Persistencia {
     public static void guardarZonas(List<dominio.zona.Zona> zonas) {
         guardarLista(zonas, ZONAS_FILE);
     }
+
 
     public static List<dominio.zona.Zona> cargarZonas() {
         return cargarLista(ZONAS_FILE);

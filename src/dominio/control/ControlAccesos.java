@@ -20,11 +20,20 @@ public class ControlAccesos {
     private List<Zona> zonas;
     private List<Persona> personas;
 
+    /**
+     * @param zonas    lista de zonas del festival
+     * @param personas lista de personas registradas
+     */
     public ControlAccesos(List<Zona> zonas, List<Persona> personas){
         this.zonas = zonas;
         this.personas = personas;
     }
 
+    /**
+     * Obtiene todos los stands (zonas restringidas de tipo Stand).
+     *
+     * @return lista de Stand
+     */
     public List<Stand> getStands() {
         return zonas.stream()
                 .filter(z -> z instanceof Stand)
@@ -32,21 +41,48 @@ public class ControlAccesos {
                 .collect(Collectors.toList());
     }
 
-
+    /**
+     * @return lista de todas las zonas
+     */
     public List<Zona> getZonas() {
         return zonas;
     }
 
+    /**
+     * @param zonas nueva lista de zonas
+     */
     public void setZonas(List<Zona> zonas) {
         this.zonas = zonas;
     }
+
+    /**
+     * @return lista de todas las personas
+     */
     public List<Persona> getPersonas() {
         return personas;
     }
+
+    /**
+     *
+     * @param personas nueva lista de personas
+     */
     public void setPersonas(List<Persona> personas) {
         this.personas = personas;
     }
 
+
+    /**
+     * Mueve una persona de una zona de origen a una zona destino,
+     * registrando el acceso y actualizando la persistencia.
+     *
+     * @param p       persona a mover
+     * @param origen  zona de la cual proviene la persona (puede ser null si es su primer ingreso)
+     * @param destino zona a la que quiere ingresar
+     * @throws NULLdestinoException         si el destino es null
+     * @throws DestinoInvalidoException     si origen y destino son iguales
+     * @throws AccesoNoAutorizadoException  si la persona no tiene permiso para entrar
+     * @throws CapacidadAlcanzadaException  si la zona destino está llena
+     */
     public void moverPersona(Persona p, Zona origen, Zona destino)
             throws AccesoNoAutorizadoException, CapacidadAlcanzadaException, DestinoInvalidoException {
         if (destino == null) {
@@ -86,6 +122,13 @@ public class ControlAccesos {
         p.agregarAcceso(nuevo);
     }
 
+
+    /**
+     * Determina en qué zona se encuentra actualmente la persona.
+     *
+     * @param p persona a buscar
+     * @return zona donde está la persona, o null si no está en ninguna
+     */
     public Zona obtenerZonaActual(Persona p) {
         Iterator<Zona> it = zonas.iterator();
         Zona encontrada = null;
@@ -98,6 +141,14 @@ public class ControlAccesos {
         return encontrada;
     }
 
+
+    /**
+     * Busca una persona por su ID.
+     *
+     * @param id identificador de la persona
+     * @return objeto Persona encontrado
+     * @throws RuntimeException si no existe ninguna persona con ese ID
+     */
     public Persona obtenerPersona(int id) throws RuntimeException {
         Iterator<Persona> iter = personas.iterator();
         Persona encontrada = null;
@@ -114,7 +165,12 @@ public class ControlAccesos {
     }
 
 
-
+    /**
+     * Genera un texto con datos de la persona y su historial de accesos.
+     *
+     * @param p persona de la cual mostrar los datos
+     * @return cadena formateada con la información
+     */
     public String mostrarDatos(Persona p) {
         StringBuilder sb = new StringBuilder();
         sb.append(p.toString()).append("\n");

@@ -11,6 +11,13 @@ import dominio.zona.Zona;
 
 public class Reportes implements Serializable {
 
+    /**
+     * Genera un reporte de concurrencia por zona, ordenado descendentemente
+     * por la cantidad de personas en cada zona, e incluye detalle de eventos en escenarios.
+     *
+     * @param zonas lista de zonas a incluir en el reporte
+     * @return texto formateado del reporte de zonas
+     */
     public static String generarReporteZonas(List<Zona> zonas) {
         // Va en orden descendente por concurrencia actual
         Collections.sort(zonas, new Comparator<Zona>() {
@@ -25,7 +32,7 @@ public class Reportes implements Serializable {
         try (PrintWriter writer = new PrintWriter(new FileWriter("reporteZonas.txt"))) {
             for (Zona zona : zonas) {
                 int concurrencia = zona.getPersonas().size(); //Creo una variable concurrencia para no usar el getter otra vez mas abajo, menos invocaciones
-                totalPersonas += concurrencia;//acumulo para despues mostrarlo porque decia la consigna que al final hay que mostrar la cant de todos los del predio
+                totalPersonas += concurrencia;
                 String linea = String.format("Zona %s - %s: %d personas",
                         zona.getCodigo(), zona.getDescripcion(), concurrencia);
                 sb.append(linea).append("\n");
@@ -50,8 +57,14 @@ public class Reportes implements Serializable {
         return sb.toString();
     }
 
+    /**
+     * Genera un reporte de todos los stands, ordenándolos alfabéticamente
+     * por el nombre de su responsable e incluyendo la lista de empleados.
+     *
+     * @param stands lista de stands a incluir en el reporte
+     * @return texto formateado del reporte de stands
+     */
     public static String generarReporteStands(List<Stand> stands) {
-        // Orden alfabético por nombre del responsable como dice la consigna
         Collections.sort(stands, new Comparator<Stand>() {
             @Override
             public int compare(Stand s1, Stand s2) {
@@ -59,7 +72,6 @@ public class Reportes implements Serializable {
                         .compareToIgnoreCase(s2.getResponsable().getNombre());
             }
         });
-
         StringBuilder sb = new StringBuilder();
         try (PrintWriter writer = new PrintWriter(new FileWriter("reporteStands.txt"))) {
             for (Stand stand : stands) {

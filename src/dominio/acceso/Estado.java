@@ -1,5 +1,8 @@
 package dominio.acceso;
 
+/**
+ * Representa los posibles estados de un acceso a zona.
+ */
 public enum Estado {
     AUTORIZADO {
         @Override

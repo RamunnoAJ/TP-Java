@@ -1,23 +1,26 @@
 package GUI;
 
 import dominio.control.ControlAccesos;
-import dominio.persistencia.Persistencia;
 import dominio.persona.Persona;
-import dominio.zona.Zona;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.util.List;
 
+/**
+ * Frame para consultar y mostrar los accesos de una persona por su ID.
+ * Utiliza el ControlAccesos de la aplicación principal para obtener y formatear los datos.
+ */
 public class ConsultaAccesosFrame extends JFrame {
     private JTextField txtId;
     private JTextArea textArea;
     private ControlAccesos control;
 
+    /**
+     * Construye la ventana de consulta de accesos.
+     * Se apoya en el ControlAccesos inicializado en FestivalApp para mantener coherencia de datos.
+     */
     public ConsultaAccesosFrame() {
-        // Utiliza el ControlAccesos inicializado en FestivalApp
-        control = FestivalApp.control;  // Evita recargar datos y asegura coherencia
+        control = FestivalApp.control;
 
         setTitle("Consulta de Persona");
         setSize(500, 400);

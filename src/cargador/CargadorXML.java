@@ -6,16 +6,31 @@ import dominio.zona.*;
 import org.w3c.dom.*;
 import javax.xml.parsers.*;
 import java.io.File;
-import java.time.LocalDateTime;
 import java.util.*;
 
+/**
+ * Carga la configuración del festival desde un archivo XML.
+ */
 public class CargadorXML {
     private final String ruta;
 
+    /**
+     * Crea un cargador que leerá el archivo XML en la ruta indicada.
+     *
+     * @param ruta la ruta al archivo XML de entrada
+     */
     public CargadorXML(String ruta) {
         this.ruta = ruta;
     }
 
+    /**
+     * Procesa el XML y genera un resultado con las zonas y personas cargadas.
+     * Se registran en el informe de errores los problemas hallados (tags desconocidos,
+     * accesos inválidos, etc.).
+     *
+     * @param informe el objeto donde se reportan errores de carga
+     * @return objeto ResultadoCarga con las listas de zonas y personas
+     */
     public ResultadoCarga cargar(InformeErrores informe) {
         Map<String, Zona> zonasPorCodigo = new HashMap<>();
         Map<Integer, Persona> personasPorId = new HashMap<>();

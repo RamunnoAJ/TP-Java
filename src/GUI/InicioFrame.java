@@ -3,7 +3,16 @@ package GUI;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Ventana de inicio de la aplicación FESTIVAL APP.
+ * Muestra un fondo degradado, un logo central y un botón
+ * para entrar al menú principal.
+ */
 public class InicioFrame extends JFrame {
+    /**
+     * Construye la ventana de inicio configurando su tamaño,
+     * comportamiento de cierre y contenido (logo y botón de entrada).
+     */
     public InicioFrame() {
         setTitle("FESTIVAL APP");
         setSize(800, 600);

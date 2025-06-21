@@ -1,16 +1,19 @@
 package GUI;
 
 import dominio.control.Reportes;
-import dominio.persistencia.Persistencia;
 import dominio.zona.Stand;
 import dominio.zona.Zona;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.List;
-import java.util.stream.Collectors;
 
+/**
+ * Frame que muestra un reporte, ya sea de zonas o de stands,
+ * según el tipo indicado ("ZONAS" o cualquier otro valor para stands).
+ */
 public class ReporteFrame extends JFrame {
+
     public ReporteFrame(String tipo) {
         setTitle("Reporte " + tipo);
         setSize(800, 600);

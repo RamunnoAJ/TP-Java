@@ -3,7 +3,16 @@ package GUI;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Ventana del menú principal de la aplicación FESTIVAL APP.
+ * Permite al usuario navegar a las diferentes funciones:
+ * búsqueda de persona, mover persona y generación de reportes.
+ */
 public class MenuFrame extends JFrame {
+    /**
+     * Construye y configura la ventana del menú principal.
+     * Define el fondo degradado, título, botones de navegación y sus acciones.
+     */
     public MenuFrame() {
         setTitle("FESTIVAL APP");
         setSize(800, 600);

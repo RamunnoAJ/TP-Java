@@ -3,11 +3,21 @@ package dominio.zona;
 import dominio.persona.Artista;
 import java.io.Serializable;
 
+/**
+ * Representa un evento musical programado en un escenario.
+ */
 public class Evento implements Serializable {
     private String fecha;
     private String hora;
     private Artista artista;
 
+    /**
+     * Constructor de Evento.
+     *
+     * @param fecha   Fecha en formato texto del evento
+     * @param hora    Hora en formato texto del evento
+     * @param artista Artista que participa en el evento
+     */
     public Evento(String fecha, String hora, Artista artista){
         this.fecha = fecha;
         this.hora = hora;

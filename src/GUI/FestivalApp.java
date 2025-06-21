@@ -13,8 +13,20 @@ import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase principal de la aplicación del festival.
+ * Permite al usuario elegir entre cargar datos desde un XML o desde archivos de persistencia,
+ * inicializa el ControlAccesos con los datos resultantes y muestra la ventana de inicio.
+ */
 public class FestivalApp {
     public static ControlAccesos control;
+    /**
+     * Punto de entrada de la aplicación.
+     * Pregunta al usuario cómo desea cargar los datos, realiza la carga correspondiente,
+     * persiste los datos si se obtuvo del XML, y arranca la ventana de inicio.
+     *
+     * @param args argumentos de línea de comando (no utilizados)
+     */
     public static void main(String[] args) {
         // Pregunta al usuario cómo cargar los datos
         String[] options = {"Cargar XML", "Cargar Persistencia"};

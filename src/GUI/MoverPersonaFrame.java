@@ -4,7 +4,6 @@ import dominio.control.ControlAccesos;
 import dominio.excepciones.AccesoNoAutorizadoException;
 import dominio.excepciones.CapacidadAlcanzadaException;
 import dominio.excepciones.NULLdestinoException;
-import dominio.persistencia.Persistencia;
 import dominio.persona.Persona;
 import dominio.zona.Zona;
 
@@ -12,11 +11,19 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 
+/**
+ * Frame para mover una persona de su zona actual a otra zona seleccionada.
+ * Muestra dos desplegables (persona y destino) y botones para ejecutar o cancelar la acción.
+ */
 public class MoverPersonaFrame extends JFrame {
     private JComboBox<Zona> cbDestino;
     private JComboBox<Persona> cbPersona;
     private ControlAccesos control;
 
+    /**
+     * Construye el frame configurando los componentes UI y cargando
+     * las listas de personas y zonas del controlador compartido.
+     */
     public MoverPersonaFrame() {
         // Utiliza el ControlAccesos inicializado en FestivalApp
         control = FestivalApp.control;  // Instancia compartida

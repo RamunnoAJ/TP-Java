@@ -6,12 +6,27 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Representa un stand de comida o merchandising dentro de una zona restringida.
+ */
 public class Stand extends ZonaRestringida {
     private String ubicacion;
     private ZonaComun zonacomun;
     private Comerciante responsable;
     private List<Comerciante> empleados;
 
+    /**
+     * Constructor de Stand.
+     *
+     * @param codigo      Código alfanumérico único del stand
+     * @param descripcion Descripción del stand
+     * @param personas    Lista inicial de personas presentes en la zona
+     * @param CapMax      Capacidad máxima del stand
+     * @param ubicacion   Ubicación dentro de la zona común
+     * @param zonacomun   Zona común asociada al stand
+     * @param responsable Comerciante responsable del stand
+     * @param empleados   Lista inicial de empleados del stand
+     */
     public Stand(String codigo, String descripcion, LinkedList<Persona> personas, int CapMax, String ubicacion, ZonaComun zonacomun, Comerciante responsable, List<Comerciante> empleados) {
         super(codigo, descripcion, personas, CapMax);
         this.ubicacion = ubicacion;
@@ -52,6 +67,12 @@ public class Stand extends ZonaRestringida {
         this.empleados = empleados;
     }
 
+    /**
+     * Agrega un empleado al stand, si no existe ya en la lista.
+     *
+     * @param comerciante el comerciante a agregar
+     * @return true si se agregó, false si ya estaba o la lista es null
+     */
     public boolean agregarEmpleado(Comerciante comerciante) {
         if(empleados.contains(comerciante)||empleados==null){
             return false;
@@ -61,6 +82,12 @@ public class Stand extends ZonaRestringida {
         }
     }
 
+    /**
+     * Elimina un empleado del stand, si existe en la lista.
+     *
+     * @param comerciante el comerciante a eliminar
+     * @return true si se eliminó, false si no estaba o la lista es null
+     */
     public boolean eliminarEmpleado(Comerciante comerciante) {
         if(!empleados.contains(comerciante)||empleados==null){
             return false;
