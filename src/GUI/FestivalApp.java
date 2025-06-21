@@ -49,7 +49,7 @@ public class FestivalApp {
         } else {
             zonas = Persistencia.cargarZonas();
             personas = Persistencia.cargarPersonas();
-            }
+        }
         control = new ControlAccesos(zonas, personas);
         new InicioFrame().setVisible(true);
 

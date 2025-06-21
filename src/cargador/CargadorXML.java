@@ -77,6 +77,7 @@ public class CargadorXML {
                 List<Acceso> accesos = new ArrayList<>();
 
                 Persona p = switch (tipo) {
+                    case "staffOrganizador" -> new StaffOrganizador(id, nombre, accesos);
                     case "asistente" -> new Asistente(id, nombre, accesos);
                     case "artista" -> {
                         String codEscenario = getText(elem, "escenario");

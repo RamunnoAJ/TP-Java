@@ -76,6 +76,11 @@
             <nombre>Valentín Ríos</nombre>
             <stand>S002</stand>
         </comerciante>
+        <comerciante>
+            <id>11</id>
+            <nombre>Laura Méndez</nombre>
+            <stand>S002</stand>
+        </comerciante>
 
         <artista>
             <id>4</id>
@@ -85,6 +90,11 @@
         <artista>
             <id>8</id>
             <nombre>Fito Páez</nombre>
+            <escenario>E001</escenario>
+        </artista>
+        <artista>
+            <id>12</id>
+            <nombre>Wos</nombre>
             <escenario>E001</escenario>
         </artista>
 
@@ -100,6 +110,19 @@
             <id>10</id>
             <nombre>Sofía Martínez</nombre>
         </asistente>
+        <asistente>
+            <id>13</id>
+            <nombre>Micaela Fernández</nombre>
+        </asistente>
+
+        <staffOrganizador>
+            <id>14</id>
+            <nombre>Agustín Ramunno</nombre>
+        </staffOrganizador>
+        <staffOrganizador>
+            <id>15</id>
+            <nombre>Theo Andreani</nombre>
+        </staffOrganizador>
     </personas>
 
     <accesos>
@@ -137,6 +160,36 @@
             <persona>8</persona>
             <zona>B001</zona>
             <duracion>30</duracion>
+            <estado>AUTORIZADO</estado>
+        </acceso>
+        <acceso>
+            <persona>11</persona>
+            <zona>C002</zona>
+            <duracion>25</duracion>
+            <estado>AUTORIZADO</estado>
+        </acceso>
+        <acceso>
+            <persona>11</persona>
+            <zona>B001</zona>
+            <duracion>15</duracion>
+            <estado>DENEGADO</estado>
+        </acceso>
+        <acceso>
+            <persona>12</persona>
+            <zona>B001</zona>
+            <duracion>40</duracion>
+            <estado>AUTORIZADO</estado>
+        </acceso>
+        <acceso>
+            <persona>13</persona>
+            <zona>S001</zona>
+            <duracion>10</duracion>
+            <estado>DENEGADO</estado>
+        </acceso>
+        <acceso>
+            <persona>13</persona>
+            <zona>C001</zona>
+            <duracion>20</duracion>
             <estado>AUTORIZADO</estado>
         </acceso>
     </accesos>
