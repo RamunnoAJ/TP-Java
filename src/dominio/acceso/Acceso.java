@@ -2,7 +2,6 @@ package dominio.acceso;
 
 
 import dominio.zona.Zona;
-
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;

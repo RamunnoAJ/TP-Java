@@ -2,7 +2,6 @@ package dominio.zona;
 
 import dominio.persona.Comerciante;
 import dominio.persona.Persona;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;

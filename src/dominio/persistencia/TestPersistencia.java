@@ -4,7 +4,6 @@ import dominio.acceso.Acceso;
 import dominio.acceso.Estado;
 import dominio.persona.*;
 import dominio.zona.*;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;

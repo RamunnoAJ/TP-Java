@@ -1,7 +1,6 @@
 package dominio.zona;
 
 import dominio.persona.Artista;
-
 import java.io.Serializable;
 
 public class Evento implements Serializable {

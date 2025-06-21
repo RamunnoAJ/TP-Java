@@ -2,7 +2,6 @@ package dominio.persona;
 
 import dominio.acceso.Acceso;
 import dominio.zona.Zona;
-
 import java.io.Serializable;
 import java.util.List;
 

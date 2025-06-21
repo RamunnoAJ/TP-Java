@@ -7,7 +7,6 @@ import dominio.excepciones.*;
 import dominio.persona.Persona;
 import dominio.zona.Zona;
 import dominio.zona.ZonaRestringida;
-
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Iterator;

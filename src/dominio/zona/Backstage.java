@@ -1,7 +1,6 @@
 package dominio.zona;
 
 import dominio.persona.Persona;
-
 import java.util.LinkedList;
 
 public class Backstage extends ZonaRestringida {

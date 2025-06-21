@@ -1,7 +1,6 @@
 package dominio.zona;
 
 import dominio.persona.Persona;
-
 import java.io.Serializable;
 import java.util.LinkedList;
 

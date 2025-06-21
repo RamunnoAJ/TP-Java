@@ -2,7 +2,6 @@ package dominio.control;
 
 import java.util.*;
 import java.io.*;
-import javax.swing.JTextArea;
 
 import dominio.persona.Persona;
 import dominio.zona.Escenario;
@@ -68,7 +67,6 @@ public class Reportes implements Serializable {
                         stand.getCodigo(), stand.getUbicacion(), stand.getResponsable().getNombre());
                 sb.append(linea).append("\n");
                 writer.println(linea);
-
                 sb.append("  Empleados:\n");
                 writer.println("  Empleados:");
                 for (Persona empleado : stand.getEmpleados()) {
