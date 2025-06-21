@@ -5,17 +5,18 @@ import dominio.zona.Zona;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
 public class Acceso implements Serializable {
     private Zona zona;
     private LocalDateTime fecha;
-    private int cantMinutos;
+    private int duracion;
     private Estado estado;
 
-    public Acceso(Zona zona, int cantMinutos, Estado estado) {
+    public Acceso(Zona zona, int duracion, Estado estado) {
         this.zona = zona;
-        this.fecha = LocalDateTime.now();
-        this.cantMinutos = cantMinutos;
+        this.fecha = LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS);
+        this.duracion = duracion;
         this.estado = estado;
     }
 
@@ -43,15 +44,16 @@ public class Acceso implements Serializable {
         this.estado = estado;
     }
 
-    public int getCantMinutos() {
-        return cantMinutos;
+    public int getDuracion() {
+        return duracion;
     }
 
-    public void setCantMinutos(int cantMinutos) {
-        this.cantMinutos = cantMinutos;
+    public void setDuracion(int duracion) {
+        this.duracion = duracion;
     }
 
     public String toString() {
-        return zona.toString() + " " + fecha + " " + "Cantidad de minutos en la zona" + cantMinutos + "acceso" + estado.toString();
+        return String.format("Zona: %s  – Fecha: %s  – Duración: %d min  – Estado: %s",
+                zona.getCodigo(), fecha, duracion, estado);
     }
 }

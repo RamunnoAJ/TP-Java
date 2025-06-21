@@ -7,6 +7,9 @@ import dominio.excepciones.*;
 import dominio.persona.Persona;
 import dominio.zona.Zona;
 import dominio.zona.ZonaRestringida;
+
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Iterator;
 import java.util.List;
 import dominio.persistencia.Persistencia;
@@ -46,8 +49,17 @@ public class ControlAccesos {
     }
 
     private void registrarAcceso(Persona p, Zona z, Estado estado) {
-        Acceso a = new Acceso(z, 0, estado);
-        p.agregarAcceso(a);
+        LocalDateTime ahora = LocalDateTime.now();
+        List<Acceso> accesos = p.getAccesos();
+        if (!accesos.isEmpty()) {
+            Acceso anterior = accesos.get(accesos.size() - 1);
+            long mins = ChronoUnit.MINUTES.between(
+                    anterior.getFecha(), ahora
+            );
+            anterior.setDuracion((int) mins);
+        }
+        Acceso nuevo = new Acceso(z, 0, estado);
+        p.agregarAcceso(nuevo);
     }
 
     public Zona obtenerZonaActual(Persona p) {
@@ -93,7 +105,7 @@ public class ControlAccesos {
                         .append("  – Fecha: ")
                         .append(a.getFecha())
                         .append("  – Duración: ")
-                        .append(a.getCantMinutos()).append(" min")
+                        .append(a.getDuracion()).append(" min")
                         .append("  – Estado: ")
                         .append(a.getEstado().name())
                         .append("\n");
