@@ -1,0 +1,37 @@
+package dominio.persona;
+
+import dominio.acceso.Acceso;
+import dominio.zona.Backstage;
+import dominio.zona.Escenario;
+import dominio.zona.Zona;
+import dominio.zona.ZonaComun;
+
+import java.util.List;
+
+public class Artista extends Persona{
+    private Escenario escenario;
+
+    public Artista(int id, String nombre, List<Acceso> accesos, Zona z) {
+
+        super(id, nombre, accesos);
+        this.escenario = (Escenario)z;
+    }
+
+    @Override
+    public String toString() {
+        return " Artista. "+super.toString();
+    }
+
+    public Escenario getEscenario() {
+        return escenario;
+    }
+    public void setEscenario(Escenario escenario) {
+        this.escenario = escenario;
+    }
+
+    @Override
+    public boolean tieneAcceso(Zona z) {
+        return (z instanceof ZonaComun ||(z instanceof Escenario && escenario.equals(z))||z instanceof Backstage);
+    }
+}
+

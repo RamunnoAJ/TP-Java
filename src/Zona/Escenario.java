@@ -24,9 +24,10 @@ public class Escenario extends Zona{
     public List<Evento> getEventos() {
         return eventos;
     }
-    public void mostrarEventos(){
+
+    public void mostrarEventos() {
         System.out.println("Eventos musicales: ");
-        for(Evento evento : eventos){
+        for (Evento evento : eventos) {
             System.out.println(evento.toString());
         }
     }
