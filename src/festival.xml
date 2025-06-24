@@ -36,6 +36,33 @@
             </empleados>
         </stand>
 
+        <!-- Nuevos stands -->
+        <stand>
+            <codigo>S003</codigo>
+            <descripcion>Stand de souvenirs</descripcion>
+            <capMax>6</capMax>
+            <ubicacion>Bloque C</ubicacion>
+            <zonaComun>C001</zonaComun>
+            <responsable>34</responsable>
+            <empleados>
+                <empleado>35</empleado>
+                <empleado>36</empleado>
+            </empleados>
+        </stand>
+
+        <stand>
+            <codigo>S004</codigo>
+            <descripcion>Stand de artesanías</descripcion>
+            <capMax>5</capMax>
+            <ubicacion>Bloque D</ubicacion>
+            <zonaComun>C002</zonaComun>
+            <responsable>37</responsable>
+            <empleados>
+                <empleado>38</empleado>
+                <empleado>39</empleado>
+            </empleados>
+        </stand>
+
         <escenario>
             <codigo>E001</codigo>
             <descripcion>Escenario rock</descripcion>
@@ -54,6 +81,42 @@
             </eventos>
         </escenario>
 
+        <escenario>
+            <codigo>E002</codigo>
+            <descripcion>Escenario pop</descripcion>
+            <capMax>250</capMax>
+            <eventos>
+                <evento>
+                    <fecha>2025-07-02</fecha>
+                    <hora>20:00</hora>
+                    <artista>16</artista>
+                </evento>
+                <evento>
+                    <fecha>2025-07-02</fecha>
+                    <hora>22:00</hora>
+                    <artista>17</artista>
+                </evento>
+            </eventos>
+        </escenario>
+
+        <escenario>
+            <codigo>E003</codigo>
+            <descripcion>Escenario electrónico</descripcion>
+            <capMax>300</capMax>
+            <eventos>
+                <evento>
+                    <fecha>2025-07-03</fecha>
+                    <hora>21:30</hora>
+                    <artista>18</artista>
+                </evento>
+                <evento>
+                    <fecha>2025-07-04</fecha>
+                    <hora>23:00</hora>
+                    <artista>4</artista>
+                </evento>
+            </eventos>
+        </escenario>
+
         <backstage>
             <codigo>B001</codigo>
             <descripcion>Backstage VIP</descripcion>
@@ -62,6 +125,7 @@
     </zonas>
 
     <personas>
+        <!-- Comerciantes existentes -->
         <comerciante>
             <id>1</id>
             <nombre>Juan Pérez</nombre>
@@ -77,7 +141,6 @@
             <nombre>Marco Díaz</nombre>
             <stand>S001</stand>
         </comerciante>
-
         <comerciante>
             <id>6</id>
             <nombre>Camila Torres</nombre>
@@ -94,6 +157,39 @@
             <stand>S002</stand>
         </comerciante>
 
+        <!-- Nuevos comerciantes -->
+        <comerciante>
+            <id>34</id>
+            <nombre>Diego Fernández</nombre>
+            <stand>S003</stand>
+        </comerciante>
+        <comerciante>
+            <id>35</id>
+            <nombre>Fernanda Morales</nombre>
+            <stand>S003</stand>
+        </comerciante>
+        <comerciante>
+            <id>36</id>
+            <nombre>Matías Pedrini</nombre>
+            <stand>S003</stand>
+        </comerciante>
+        <comerciante>
+            <id>37</id>
+            <nombre>Carolina Sánchez</nombre>
+            <stand>S004</stand>
+        </comerciante>
+        <comerciante>
+            <id>38</id>
+            <nombre>Javier Gómez</nombre>
+            <stand>S004</stand>
+        </comerciante>
+        <comerciante>
+            <id>39</id>
+            <nombre>Natalia Ruiz</nombre>
+            <stand>S004</stand>
+        </comerciante>
+
+        <!-- Artistas -->
         <artista>
             <id>4</id>
             <nombre>Lali Espósito</nombre>
@@ -109,7 +205,23 @@
             <nombre>Wos</nombre>
             <escenario>E001</escenario>
         </artista>
+        <artista>
+            <id>16</id>
+            <nombre>Paulo Londra</nombre>
+            <escenario>E002</escenario>
+        </artista>
+        <artista>
+            <id>17</id>
+            <nombre>TINI</nombre>
+            <escenario>E002</escenario>
+        </artista>
+        <artista>
+            <id>18</id>
+            <nombre>Bizarrap</nombre>
+            <escenario>E003</escenario>
+        </artista>
 
+        <!-- Asistentes existentes -->
         <asistente>
             <id>5</id>
             <nombre>Pedro García</nombre>
@@ -126,7 +238,70 @@
             <id>13</id>
             <nombre>Micaela Fernández</nombre>
         </asistente>
+        <asistente>
+            <id>19</id>
+            <nombre>Santiago Ruiz</nombre>
+        </asistente>
+        <asistente>
+            <id>20</id>
+            <nombre>María Torres</nombre>
+        </asistente>
+        <asistente>
+            <id>21</id>
+            <nombre>Andrés Morales</nombre>
+        </asistente>
+        <asistente>
+            <id>22</id>
+            <nombre>Florencia Gutiérrez</nombre>
+        </asistente>
+        <asistente>
+            <id>23</id>
+            <nombre>Nicolás Castro</nombre>
+        </asistente>
+        <asistente>
+            <id>24</id>
+            <nombre>Daniela Pérez</nombre>
+        </asistente>
+        <asistente>
+            <id>25</id>
+            <nombre>Federico Álvarez</nombre>
+        </asistente>
+        <asistente>
+            <id>26</id>
+            <nombre>Julieta Navarro</nombre>
+        </asistente>
+        <asistente>
+            <id>27</id>
+            <nombre>Lucas Fernández</nombre>
+        </asistente>
+        <asistente>
+            <id>28</id>
+            <nombre>Camila Rodríguez</nombre>
+        </asistente>
 
+        <!-- Nuevos asistentes -->
+        <asistente>
+            <id>29</id>
+            <nombre>Elisa Castro</nombre>
+        </asistente>
+        <asistente>
+            <id>30</id>
+            <nombre>Bruno Torres</nombre>
+        </asistente>
+        <asistente>
+            <id>31</id>
+            <nombre>Martina López</nombre>
+        </asistente>
+        <asistente>
+            <id>32</id>
+            <nombre>Alejandro Ramírez</nombre>
+        </asistente>
+        <asistente>
+            <id>33</id>
+            <nombre>Julieta González</nombre>
+        </asistente>
+
+        <!-- Staff organizador -->
         <staffOrganizador>
             <id>14</id>
             <nombre>Agustín Ramunno</nombre>

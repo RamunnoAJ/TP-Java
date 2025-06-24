@@ -2,6 +2,14 @@ Stand S002 - Ubicación: Bloque B - Responsable: Camila Torres
   Empleados:
     Valentín Ríos
     Laura Méndez
+Stand S004 - Ubicación: Bloque D - Responsable: Carolina Sánchez
+  Empleados:
+    Javier Gómez
+    Natalia Ruiz
+Stand S003 - Ubicación: Bloque C - Responsable: Diego Fernández
+  Empleados:
+    Fernanda Morales
+    Matías Pedrini
 Stand S001 - Ubicación: Bloque A - Responsable: Juan Pérez
   Empleados:
     Ana López

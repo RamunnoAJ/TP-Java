@@ -6,5 +6,15 @@ Zona E001 - Escenario rock: 1 personas
     2025-06-30 21:00 - Lali Espósito
     2025-07-01 22:30 - Fito Páez
 Zona S001 - Stand de bebidas: 1 personas
+Zona E002 - Escenario pop: 0 personas
+  Eventos programados:
+    2025-07-02 20:00 - Paulo Londra
+    2025-07-02 22:00 - TINI
+Zona E003 - Escenario electrónico: 0 personas
+  Eventos programados:
+    2025-07-03 21:30 - Bizarrap
+    2025-07-04 23:00 - Lali Espósito
 Zona S002 - Stand de postres: 0 personas
+Zona S003 - Stand de souvenirs: 0 personas
+Zona S004 - Stand de artesanías: 0 personas
 Total de personas en todo el predio: 11
