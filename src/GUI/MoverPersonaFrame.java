@@ -25,9 +25,7 @@ public class MoverPersonaFrame extends JFrame {
      * las listas de personas y zonas del controlador compartido.
      */
     public MoverPersonaFrame() {
-        // Utiliza el ControlAccesos inicializado en FestivalApp
-        control = FestivalApp.control;  // Instancia compartida
-        // Obtener las mismas zonas y personas cargadas inicialmente
+        control = FestivalApp.control;
         List<Zona> zonas = control.getZonas();
         List<Persona> personas = control.getPersonas();
 

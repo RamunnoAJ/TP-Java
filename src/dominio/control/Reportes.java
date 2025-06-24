@@ -19,19 +19,17 @@ public class Reportes implements Serializable {
      * @return texto formateado del reporte de zonas
      */
     public static String generarReporteZonas(List<Zona> zonas) {
-        // Va en orden descendente por concurrencia actual
         Collections.sort(zonas, new Comparator<Zona>() {
             @Override
             public int compare(Zona z1, Zona z2) {
                 return Integer.compare(z2.getPersonas().size(), z1.getPersonas().size());
             }
         });
-
         int totalPersonas = 0;
         StringBuilder sb = new StringBuilder();
         try (PrintWriter writer = new PrintWriter(new FileWriter("reporteZonas.txt"))) {
             for (Zona zona : zonas) {
-                int concurrencia = zona.getPersonas().size(); //Creo una variable concurrencia para no usar el getter otra vez mas abajo, menos invocaciones
+                int concurrencia = zona.getPersonas().size();
                 totalPersonas += concurrencia;
                 String linea = String.format("Zona %s - %s: %d personas",
                         zona.getCodigo(), zona.getDescripcion(), concurrencia);

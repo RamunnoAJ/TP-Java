@@ -40,6 +40,18 @@
             <codigo>E001</codigo>
             <descripcion>Escenario rock</descripcion>
             <capMax>200</capMax>
+            <eventos>
+                <evento>
+                    <fecha>2025-06-30</fecha>
+                    <hora>21:00</hora>
+                    <artista>4</artista>
+                </evento>
+                <evento>
+                    <fecha>2025-07-01</fecha>
+                    <hora>22:30</hora>
+                    <artista>8</artista>
+                </evento>
+            </eventos>
         </escenario>
 
         <backstage>
