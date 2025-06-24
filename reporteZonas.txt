@@ -1,10 +1,10 @@
-Zona E001 - Escenario rock: 4 personas
+Zona B001 - Backstage VIP: 5 personas
+Zona C001 - Zona de comidas principal: 2 personas
+Zona C002 - Zona de comidas veganas: 2 personas
+Zona E001 - Escenario rock: 1 personas
   Eventos programados:
     2025-06-30 21:00 - Lali Espósito
     2025-07-01 22:30 - Fito Páez
-Zona C001 - Zona de comidas principal: 3 personas
-Zona C002 - Zona de comidas veganas: 3 personas
-Zona B001 - Backstage VIP: 2 personas
 Zona S001 - Stand de bebidas: 1 personas
 Zona S002 - Stand de postres: 0 personas
-Total de personas en todo el predio: 13
+Total de personas en todo el predio: 11

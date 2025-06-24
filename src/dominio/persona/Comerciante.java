@@ -47,7 +47,7 @@ public class Comerciante extends Persona{
      * @param z Zona a verificar
      * @return true si tiene acceso, false en caso contrario
      */
-    public boolean tieneAcceso(Zona z) {
-        return (z instanceof ZonaComun ||(z instanceof Stand && stand.equals(z)));
-    }
+
+    @Override
+    public boolean tieneAcceso(Zona z) { return (z instanceof ZonaComun ||(z instanceof Stand && stand.equals(z))); }
 }

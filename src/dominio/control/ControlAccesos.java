@@ -13,8 +13,14 @@ import java.time.temporal.ChronoUnit;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
-
 import dominio.persistencia.Persistencia;
+
+
+/**
+ * Gestiona los accesos de personas a las distintas zonas del festival,
+ * registrando movimientos, autorizaciones y denegaciones, y ofreciendo
+ * métodos para consulta y reporte.
+ */
 
 public class ControlAccesos {
     private List<Zona> zonas;

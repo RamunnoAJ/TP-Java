@@ -9,6 +9,17 @@ import dominio.zona.Evento;
 import dominio.zona.Stand;
 import dominio.zona.Zona;
 
+/**
+ * Utilidad para generar reportes de concurrencia y actividad del festival.
+ * Provee métodos estáticos para:
+ * Generar un reporte de zonas, ordenando descendentemente por número de asistentes
+ * e incluyendo eventos programados en los escenarios.
+ * Generar un reporte de stands, ordenando alfabéticamente por el nombre del responsable
+ * e incluyendo la lista de empleados.
+ *
+ * Cada metodo escribe también un archivo de texto con el reporte correspondiente.
+ */
+
 public class Reportes implements Serializable {
 
     /**
