@@ -136,7 +136,7 @@ public class CargadorXML {
                 if (persona != null && zona != null) {
                     Acceso acceso = new Acceso(zona, duracion, estado);
                     persona.getAccesos().add(acceso);
-                    zona.getPersonas().add(persona);  // ← ¡Clave para que la concurrencia suba!
+                    zona.getPersonas().add(persona);
                 } else {
                     informe.agregar("Acceso inválido: persona " + idPersona + ", zona " + codZona);
                 }
@@ -167,8 +167,6 @@ public class CargadorXML {
                     }
                 }
             }
-
-            //ordeno las zonas por codigo
             zonas.sort(Comparator.comparing(Zona::getCodigo));
 
         } catch (Exception e) {

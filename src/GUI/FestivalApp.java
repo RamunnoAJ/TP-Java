@@ -28,7 +28,6 @@ public class FestivalApp {
      * @param args argumentos de línea de comando (no utilizados)
      */
     public static void main(String[] args) {
-        // Pregunta al usuario cómo cargar los datos
         String[] options = {"Cargar XML", "Cargar Persistencia"};
         int choice = JOptionPane.showOptionDialog(
                 null,

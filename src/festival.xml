@@ -36,7 +36,6 @@
             </empleados>
         </stand>
 
-        <!-- Nuevos stands -->
         <stand>
             <codigo>S003</codigo>
             <descripcion>Stand de souvenirs</descripcion>
@@ -125,7 +124,6 @@
     </zonas>
 
     <personas>
-        <!-- Comerciantes existentes -->
         <comerciante>
             <id>1</id>
             <nombre>Juan Pérez</nombre>
@@ -156,8 +154,6 @@
             <nombre>Laura Méndez</nombre>
             <stand>S002</stand>
         </comerciante>
-
-        <!-- Nuevos comerciantes -->
         <comerciante>
             <id>34</id>
             <nombre>Diego Fernández</nombre>
@@ -189,7 +185,6 @@
             <stand>S004</stand>
         </comerciante>
 
-        <!-- Artistas -->
         <artista>
             <id>4</id>
             <nombre>Lali Espósito</nombre>
@@ -221,7 +216,6 @@
             <escenario>E003</escenario>
         </artista>
 
-        <!-- Asistentes existentes -->
         <asistente>
             <id>5</id>
             <nombre>Pedro García</nombre>
@@ -278,8 +272,6 @@
             <id>28</id>
             <nombre>Camila Rodríguez</nombre>
         </asistente>
-
-        <!-- Nuevos asistentes -->
         <asistente>
             <id>29</id>
             <nombre>Elisa Castro</nombre>
@@ -301,7 +293,6 @@
             <nombre>Julieta González</nombre>
         </asistente>
 
-        <!-- Staff organizador -->
         <staffOrganizador>
             <id>14</id>
             <nombre>Agustín Ramunno</nombre>
@@ -322,7 +313,7 @@
         <acceso>
             <persona>5</persona>
             <zona>B001</zona>
-            <duracion>60</duracion>
+            <duracion>0</duracion>
             <estado>DENEGADO</estado>
         </acceso>
         <acceso>
@@ -340,7 +331,7 @@
         <acceso>
             <persona>10</persona>
             <zona>E001</zona>
-            <duracion>15</duracion>
+            <duracion>0</duracion>
             <estado>DENEGADO</estado>
         </acceso>
         <acceso>
@@ -358,7 +349,7 @@
         <acceso>
             <persona>11</persona>
             <zona>B001</zona>
-            <duracion>15</duracion>
+            <duracion>0</duracion>
             <estado>DENEGADO</estado>
         </acceso>
         <acceso>
@@ -370,7 +361,7 @@
         <acceso>
             <persona>13</persona>
             <zona>S001</zona>
-            <duracion>10</duracion>
+            <duracion>0</duracion>
             <estado>DENEGADO</estado>
         </acceso>
         <acceso>
